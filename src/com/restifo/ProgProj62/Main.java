@@ -14,9 +14,9 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		while (true)
 		{
-			out.print("Enter a number between 25-25: ");
+			out.print("Enter a number between -25-25: ");
 			int num = scan.nextInt();
-			if (num >= 25 && num <= 25)
+			if (num >= -25 && num <= 25)
 			{
 				if (numsEntered.containsKey(num))
 				{
