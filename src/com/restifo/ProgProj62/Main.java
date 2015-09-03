@@ -14,7 +14,7 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		while (true)
 		{
-			out.print("Enter a number -25-25: ");
+			out.print("Enter a number -25-25 (a number outside the range exits): ");
 			int num = scan.nextInt();
 			if (num >= -25 && num <= 25)
 			{
@@ -31,7 +31,7 @@ public class Main {
 			{
 				continue;
 			}
-			out.printf("%d: %d", i, nums[i]);
+			out.printf("%d: %d\n", i, nums[i]);
 		}
 		scan.close();
 	}
