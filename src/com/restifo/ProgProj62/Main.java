@@ -1,5 +1,5 @@
 // Remove this line below this one when grading to make it work
-package com.restifo.ProgProj61;
+package com.restifo.ProgProj62;
 
 import static java.lang.System.out;
 
@@ -14,9 +14,9 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		while (true)
 		{
-			out.print("Enter a number between 0-50: ");
+			out.print("Enter a number between 25-25: ");
 			int num = scan.nextInt();
-			if (num >= 0 && num <= 50)
+			if (num >= 25 && num <= 25)
 			{
 				if (numsEntered.containsKey(num))
 				{
