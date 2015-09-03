@@ -3,38 +3,33 @@ package com.restifo.ProgProj61;
 
 import static java.lang.System.out;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) 
 	{
-		Map<Integer, Integer> numsEntered = new HashMap<Integer, Integer>();
+		int[] nums = new int[51];
 		Scanner scan = new Scanner(System.in);
 		while (true)
 		{
-			out.print("Enter a number between 0-50: ");
+			out.print("Enter a number 0-50: ");
 			int num = scan.nextInt();
 			if (num >= 0 && num <= 50)
 			{
-				if (numsEntered.containsKey(num))
-				{
-					numsEntered.put(num, numsEntered.get(num) + 1);
-				}
-				else
-				{
-					numsEntered.put(num, 1);
-				}
+				nums[num]++;
 			}
 			else
 			{
 				break;
 			}
 		}
-		for (Integer i : numsEntered.keySet())
+		for (int i = 0; i < nums.length; i++)
 		{
-			out.println(i + ": " + numsEntered.get(i));
+			if (nums[i] == 0)
+			{
+				continue;
+			}
+			out.printf("%d: %d", i, nums[i]);
 		}
 		scan.close();
 	}
