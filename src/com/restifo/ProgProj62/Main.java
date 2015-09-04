@@ -10,13 +10,14 @@ public class Main {
 	{
 		int[] nums = new int[51];
 		Scanner scan = new Scanner(System.in);
+		out.println("To exit, enter a number outside the range");
 		while (true)
 		{
-			out.print("Enter a number -25-25 (a number outside the range exits): ");
+			out.print("Enter a number -25-25: ");
 			int num = scan.nextInt();
 			if (num >= -25 && num <= 25)
 			{
-				nums[num]++;
+				nums[num + 25]++;
 			}
 			else
 			{
@@ -29,7 +30,7 @@ public class Main {
 			{
 				continue;
 			}
-			out.printf("%d: %d\n", i, nums[i]);
+			out.printf("%d: %d\n", i - 25, nums[i]);
 		}
 		scan.close();
 	}

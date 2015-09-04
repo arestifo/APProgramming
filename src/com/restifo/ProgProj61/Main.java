@@ -10,9 +10,10 @@ public class Main {
 	{
 		int[] nums = new int[51];
 		Scanner scan = new Scanner(System.in);
+		out.println("To exit, enter a number outside the range");
 		while (true)
 		{
-			out.print("Enter a number 0-50 (a number outside the range exits): ");
+			out.print("Enter a number 0-50: ");
 			int num = scan.nextInt();
 			if (num >= 0 && num <= 50)
 			{
