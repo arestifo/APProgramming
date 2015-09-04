@@ -3,8 +3,6 @@ package com.restifo.ProgProj62;
 
 import static java.lang.System.out;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 public class Main {
 
