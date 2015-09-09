@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) throws FileNotFoundException
 	{
 		// Find line count
-		Scanner lineScan = new Scanner(new File("numbers.txt"));
+		Scanner lineScan = new Scanner(new File("resources/NumberReader/numbers.txt"));
 		int lineCount = 0;
 		while (lineScan.hasNext())
 		{
@@ -19,7 +19,7 @@ public class Main {
 		lineScan.close();
 		
 		// Gather data
-		Scanner scan = new Scanner(new File("numbers_NumberReader.txt"));
+		Scanner scan = new Scanner(new File("resources/NumberReader/numbers.txt"));
 		int[] numbers = new int[101];
 		int[] all = new int[lineCount];
 		double average = 0;
