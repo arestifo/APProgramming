@@ -31,6 +31,7 @@ public class Main {
 			numbers[num]++;
 		}
 		average /= all.length;
+		
 		// Find mode
 		int mode = 0;
 		for (int i = 0; i < numbers.length; i++)
@@ -50,6 +51,7 @@ public class Main {
 		sum /= all.length - 1;
 		double finSD = Math.sqrt(sum);
 		
+		// Output everything
 		out.printf("Average: \t\t%,.2f\n", average);
 		out.printf("Standard deviation: \t%,.2f\n", finSD);
 		out.printf("Mode: \t\t\t%d", mode);
