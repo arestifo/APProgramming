@@ -19,7 +19,7 @@ public class Main {
 		lineScan.close();
 		
 		// Gather data
-		Scanner scan = new Scanner(new File("resources/NumberReader/numbers.txt"));
+		Scanner scan = new Scanner(new File("numbers_NumberReader.txt"));
 		int[] numbers = new int[101];
 		int[] all = new int[lineCount];
 		double average = 0;
