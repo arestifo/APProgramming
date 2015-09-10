@@ -1,18 +1,20 @@
 package com.restifo.Compact;
 
-import java.util.Scanner;
 import static java.lang.System.out;
+
+import java.io.File;
+import java.util.Scanner;
 public class Compact {
 	public static void main(String[] args)
 	{
 		// Populate the original array
 		int[] nums = new int[100];
-		Scanner scan = new Scanner("resources/Compact/compact.txt");
+		Scanner scan = new Scanner(new File("resources/Compact/compact.txt"));
 		scan.useDelimiter("  ");
 		int aCount = 0;
 		while (scan.hasNext())
 		{
-			nums[aCount] = Integer.parseInt(scan.next())
+			nums[aCount] = Integer.parseInt(scan.next());
 			aCount++;
 		}
 		
