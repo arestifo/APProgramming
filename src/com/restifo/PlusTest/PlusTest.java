@@ -22,4 +22,11 @@ public class PlusTest
 		System.out.println(8 + 5 + " equals 8 plus 5.");
     }
 }
-
+/* Answers to questions:
+ * Last three outputs:
+ * 1) 8 plus 5 is 85 (java concatenated "8" and "5")
+ * 2) 8 plus 5 is 13 (java calculated the value of 8 + 5 and then concatenated it to the string)
+ * 3) 13 equals 8 plus 5. (java added the two values since they were before the string)
+ * 
+ * You could fix the problem by splitting the string using the + operator
+ */
