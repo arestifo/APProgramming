@@ -1,0 +1,6 @@
+Compact: Statistics project
+NumberReader: Also statistics
+PlusTest: Demonstrates the many uses of the + operator
+ProgProj61: Programming project 6.1 in the book
+ProgProj62: Programming project 6.2 in the book
+StudentGradeTable: Uses escape sequences to format data into a nice table
