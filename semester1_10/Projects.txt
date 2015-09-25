@@ -5,4 +5,6 @@ ProgProj61: Programming project 6.1 in the book
 ProgProj62: Programming project 6.2 in the book
 StudentGradeTable: Uses escape sequences to format data into a nice table
 Circle: Calculates the area of two circles
-MathFun(pain): Solves some math expressions and uselessly pr
+MathFun(pain): Solves useless math
+FavoriteMusic: Enumerated types practice
+StringMutationPractice: Description's in the title
