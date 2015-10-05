@@ -24,5 +24,6 @@ public class Circle {
 		double factCirc = circ2 / circ1;
 		System.out.println("\nThe area changed by a factor of " + factArea);
 		System.out.println("The circumference changed by a factor of " + factCirc);
+		scan.close();
 	}
 }
