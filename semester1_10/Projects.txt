@@ -9,3 +9,4 @@ MathFun(pain): Solves useless math
 FavoriteMusic: Enumerated types practice
 StringMutationPractice: Description's in the title
 StyleOptions: Some panel practice
+Taxes: Calculates gross pay and net pay including taxes
