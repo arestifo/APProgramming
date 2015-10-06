@@ -8,3 +8,4 @@ Circle: Calculates the area of two circles
 MathFun(pain): Solves useless math
 FavoriteMusic: Enumerated types practice
 StringMutationPractice: Description's in the title
+StyleOptionsPanel: Some panel practice
