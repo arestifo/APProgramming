@@ -15,7 +15,7 @@ public class CarProject {
 		license = scan.nextLine();
 		
 		int num = license.charAt(0) + license.charAt(1) + license.charAt(2) + Integer.parseInt(license.substring(4));
-		char letter = (char) (65 + (num % 26));		
+		char letter = (char) ('A' + (num % 26));		
 		String rental = String.valueOf(letter) + num;
 		
 		out.println("\nMake = " + make);
