@@ -9,11 +9,13 @@ import java.awt.event.ItemListener;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class StyleOptionsPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JLabel saying;
 	private JCheckBox bold, italic;
+	private JTextField lmao;
 	public StyleOptionsPanel()
 	{
 		saying = new JLabel("Say it with style!");
@@ -25,6 +27,9 @@ public class StyleOptionsPanel extends JPanel {
 		italic = new JCheckBox("Italic");
 		italic.setBackground(Color.pink);
 		
+		lmao = new JTextField(3);
+		//lmao.setPreferredSize(new Dimension);
+		
 		StyleListener listener = new StyleListener();
 		bold.addItemListener(listener);
 		italic.addItemListener(listener);
@@ -32,6 +37,7 @@ public class StyleOptionsPanel extends JPanel {
 		add(saying);
 		add(bold);
 		add(italic);
+		add(lmao);
 		
 		setBackground(Color.cyan);
 		setPreferredSize(new Dimension(300, 100));
@@ -43,7 +49,7 @@ public class StyleOptionsPanel extends JPanel {
 			int style = Font.PLAIN;
 			if (bold.isSelected()) 	 style = Font.BOLD;
 			if (italic.isSelected()) style += Font.ITALIC;
-			saying.setFont(new Font("Helvetica", style, 36));
+			saying.setFont(new Font("Helvetica", style, Integer.parseInt(lmao.getText())));
 		}
 	}
 }
