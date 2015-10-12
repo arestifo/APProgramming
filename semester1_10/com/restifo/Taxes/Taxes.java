@@ -24,5 +24,6 @@ public class Taxes {
 		out.printf("FICA (7.65%%)\t\t%.2f\n", grossPay * 0.0765);
 		out.printf("Federal Tax (15%%)\t%.2f\n\n", grossPay * 0.04);
 		out.printf("Net pay\t\t\t%.2f", netPay);
+		scan.close();
 	}
 }

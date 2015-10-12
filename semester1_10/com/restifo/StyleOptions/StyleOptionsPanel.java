@@ -28,7 +28,6 @@ public class StyleOptionsPanel extends JPanel {
 		italic.setBackground(Color.pink);
 		
 		lmao = new JTextField(3);
-		//lmao.setPreferredSize(new Dimension);
 		
 		StyleListener listener = new StyleListener();
 		bold.addItemListener(listener);
