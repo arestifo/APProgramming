@@ -21,5 +21,6 @@ public class CarProject {
 		out.println("\nMake = " + make);
 		out.println("Model = " + model);
 		out.printf("%s = %s", license, rental);
+		scan.close();
 	}
 }
