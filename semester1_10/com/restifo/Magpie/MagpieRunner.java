@@ -25,6 +25,7 @@ public class MagpieRunner
 			System.out.println (maggie.getResponse(statement));
 			statement = in.nextLine();
 		}
+		System.out.println("Cya fam");
 		in.close();
 	}
 
