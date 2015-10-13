@@ -25,7 +25,7 @@ public class MagpieRunner
 			System.out.println (maggie.getResponse(statement));
 			statement = in.nextLine();
 		}
-		scan.close();
+		in.close();
 	}
 
 }
