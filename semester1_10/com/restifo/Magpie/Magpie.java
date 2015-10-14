@@ -61,29 +61,17 @@ public class Magpie
 		String response = "";
 		
 		if (whichResponse == 0)
-		{
 			response = "Lmao.";
-		}
 		else if (whichResponse == 1)
-		{
 			response = "It's lit.";
-		}
 		else if (whichResponse == 2)
-		{
 			response = "Can you take a moment to talk about jet fuel?";
-		}
 		else if (whichResponse == 3)
-		{
 			response = "You don't say.";
-		}
 		else if (whichResponse == 4)
-		{
 			response = "Wanna see my meme collection?";
-		}
 		else if (whichResponse == 5)
-		{
 			response = "I'm watching you.";
-		}
 		
 		return response;
 	}
