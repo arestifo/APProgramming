@@ -62,15 +62,15 @@ public class Magpie
 		
 		if (whichResponse == 0)
 		{
-			response = "Interesting, tell me more.";
+			response = "Lmao.";
 		}
 		else if (whichResponse == 1)
 		{
-			response = "Hmmm.";
+			response = "It's lit.";
 		}
 		else if (whichResponse == 2)
 		{
-			response = "Do you really think so?";
+			response = "Can you take a moment to talk about jet fuel?";
 		}
 		else if (whichResponse == 3)
 		{
