@@ -28,5 +28,4 @@ public class MagpieRunner
 		System.out.println("Cya fam");
 		in.close();
 	}
-
 }
