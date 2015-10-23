@@ -15,6 +15,7 @@ public class IRS {
 		out.print("Enter your taxable income ($): ");
 		double income = scan.nextDouble();
 		double tax = 0;
+		
 		if (s.equals("s"))
 		{
 			if (income <= 27050)

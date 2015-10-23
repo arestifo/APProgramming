@@ -12,4 +12,4 @@ StyleOptions: Some panel practice
 Taxes: Calculates gross pay and net pay including taxes
 CarProject: Calculates car rental code given make, model, and license number
 Magpie: Experimenting with artificial intelligence
-IRS: Calculates income tax
+IRS: Calculates tax from income and filing status (single or married)
