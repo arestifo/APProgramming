@@ -15,10 +15,15 @@ public class Loan {
 		double low = scan.nextDouble();
 		out.print("High interest rate in %: ");
 		double high = scan.nextDouble();
-		double count = low - high;
-		while (count < 0)
+		double count = low;
+		out.println("\nAnnual interest rate     Monthly payments");
+		out.println("--------------------     ----------------");
+		while (count <= high)
 		{
-			double c = Math.pow(arg0, )
+			double months = count / 12.0;
+			double c = Math.pow(1 + months, years * 12);
+			double a = (amt * months * c) / (c - 1);
+			out.printf("%,.2f\t\t\t $%,.2f\n", count, a);
 			count += 0.25;
 		}
 	}
