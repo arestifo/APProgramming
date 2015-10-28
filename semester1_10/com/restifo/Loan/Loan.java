@@ -20,11 +20,11 @@ public class Loan {
 		out.println("--------------------     ----------------");
 		while (count <= high)
 		{
-			double months = count / 12.0;
-			double c = Math.pow(1 + months, years * 12);
-			double a = (amt * months * c) / (c - 1);
+			double monthly = count / 12.0;
+			double a = amt * (monthly) / (1 - (Math.pow(1 / (1 + monthly), years * 12)));
 			out.printf("%,.2f\t\t\t $%,.2f\n", count, a);
 			count += 0.25;
 		}
+		scan.close();
 	}
 }
