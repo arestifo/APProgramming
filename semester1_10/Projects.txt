@@ -11,6 +11,8 @@ StringMutationPractice: Description's in the title
 StyleOptions: Some panel practice
 Taxes: Calculates gross pay and net pay including taxes
 CarProject: Calculates car rental code given make, model, and license number
-Magpie: Experimenting with artificial intelligence
+Magpie2: Experimenting with artificial intelligence
+	Magpie3: Variation of Magpie
+	Magpie4: Variation of Magpie
 IRS: Calculates tax from income and filing status (single or married)
 Loan: Calculates the mortgage on a house given values

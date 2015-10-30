@@ -1,4 +1,4 @@
-package com.restifo.Magpie;
+package com.restifo.Magpie2;
 
 import java.util.Scanner;
 /**
