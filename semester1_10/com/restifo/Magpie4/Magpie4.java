@@ -66,23 +66,23 @@ public class Magpie4
 			else if ((findKeyword(statement, "mrs") >= 0
 					|| findKeyword(statement, "dr") >= 0 || findKeyword(statement, "ms") >= 0 )&&(findKeyword(statement, "teacher") >= 0))
 			{
-				response = "she sounds like a good teacher.";
+				response = "She sounds like a good teacher.";
 			}
 			else if ((findKeyword(statement, "I like") >= 0))
 			{
 				str = statement.substring(6);
-				response = "what do you like about" + str;
+				response = "Why do you like " + str;
 			}
 			else if ((findKeyword(statement, "I want") >= 0))
 			{
 				str = statement.substring(6);
-				response = "would you really be happy if you had" + str;
+				response = "Go buy " + str + " at the store";
 			}
 			else if ((findKeyword(statement, "I ") >= 0&&findKeyword(statement, "you") >= 0))
 			{
 				str = statement.substring(2);
 				str = statement.replace("you","");
-	
+
 				response = "Why do you " + str + " me?";
 			}
 			else

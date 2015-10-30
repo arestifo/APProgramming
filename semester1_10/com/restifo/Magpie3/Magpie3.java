@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class Magpie3
 {
-String kek;
-Scanner dankmemes = new Scanner(System.in);
+String str;
+Scanner scan = new Scanner(System.in);
 	/**
 	 * Get a default greeting
 	 * 
@@ -65,24 +65,24 @@ Scanner dankmemes = new Scanner(System.in);
 		else if ((findKeyword(statement, "mrs") >= 0
 				|| findKeyword(statement, "dr") >= 0 || findKeyword(statement, "ms") >= 0 )&&(findKeyword(statement, "teacher") >= 0))
 		{
-			response = "she sounds like a good teacher.";
+			response = "She sounds like a good teacher.";
 		}
 		else if ((findKeyword(statement, "I like") >= 0))
 		{
-			kek = statement.substring(6);
-			response = "what do you like about" + kek;
+			str = statement.substring(6);
+			response = "Why do you like " + str;
 		}
 		else if ((findKeyword(statement, "I want") >= 0))
 		{
-			kek = statement.substring(6);
-			response = "would you really be happy if you had" + kek;
+			str = statement.substring(6);
+			response = "Go buy " + str + " at the store";
 		}
 		else if ((findKeyword(statement, "I ") >= 0&&findKeyword(statement, "you") >= 0))
 		{
-			kek = statement.substring(2);
-			kek = statement.replace("you","");
+			str = statement.substring(2);
+			str = statement.replace("you","");
 
-			response = "Why do you " + kek + " me?";
+			response = "Why do you " + str + " me?";
 		}
 		else
 		{
@@ -188,19 +188,19 @@ Scanner dankmemes = new Scanner(System.in);
 
 		if (whichResponse == 0)
 		{
-			response = "Interesting, tell me more.";
+			response = "Thanks fam.";
 		}
 		else if (whichResponse == 1)
 		{
-			response = "Hmmm.";
+			response = "Tell me more .";
 		}
 		else if (whichResponse == 2)
 		{
-			response = "Do you really think so?";
+			response = "I'm watching you.";
 		}
 		else if (whichResponse == 3)
 		{
-			response = "You don't say.";
+			response = "Nice meme.";
 		}
 
 		return response;
