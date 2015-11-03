@@ -16,3 +16,4 @@ Magpie2: Experimenting with artificial intelligence
 	Magpie4: Variation of Magpie
 IRS: Calculates tax from income and filing status (single or married)
 Loan: Calculates the mortgage on a house given values
+Slots: Slot machine simulator
