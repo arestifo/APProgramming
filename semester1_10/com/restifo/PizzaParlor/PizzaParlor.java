@@ -1,16 +1,17 @@
 package com.restifo.PizzaParlor;
 
-class PizzaParlor
+public class PizzaParlor
 {
 	 private String myName;
-	 private int myNumCheesePizzas; //# of cheese pizzas
-	 private int myNumPeppPizzas; // # of pepperoni pizzas
-	 private int myNumVegPizzas; //# of veggie pizzas
-	 private int myCheeseSupply; // ounces of cheese
-	 private int myPepperoniSupply;// ounces of pepperoni
-	 private int myVeggieSupply; // ounces of veggies
-	 private double myRevenue; // dollars collected
-	 private double myOrigAcctBal;//original bank account balance
+	 private int myNumCheesePizzas;
+	 private int myNumPeppPizzas;
+	 private int myNumVegPizzas;
+	 private int myCheeseSupply; 
+	 private int myPepperoniSupply;
+	 private int myVeggieSupply; 
+	 private int myDoughSupply;
+	 private double myRevenue; 
+	 private double myOrigAcctBal;
 	 
 	 public PizzaParlor(String name)
 	 {
@@ -21,37 +22,42 @@ class PizzaParlor
 		 myCheeseSupply = 400;
 		 myPepperoniSupply = 200;
 		 myVeggieSupply = 200;
+		 myDoughSupply = 400;
 		 myRevenue = 0;
 		 myOrigAcctBal = 1000;
 	 }
 	 
-	 void orderCheese()
+	 public void orderCheese()
 	 {
 		 myNumCheesePizzas++;
-		 myRevenue += 8;// cheese pizza price:$8
-		 myCheeseSupply -= 12;//cheese needed per cheese pizza 
+		 myRevenue += 8;
+		 myCheeseSupply -= 12;
+		 myDoughSupply -= 11;
 	 }
-	 void orderPepperoni()
+	 public void orderPepperoni()
 	 {
 		 myNumPeppPizzas++;
-		 myRevenue += 10;//pepperoni pizza price:$10
-		 myCheeseSupply -= 8;//cheese needed per pepp pizza
-		 myPepperoniSupply -= 6;//pepperoni needed per pepp pizza
+		 myRevenue += 10;
+		 myCheeseSupply -= 8;
+		 myPepperoniSupply -= 6;
+		 myDoughSupply -= 11;
 	 }
-	 void orderVeggie()
+	 public void orderVeggie()
 	 {
 		 myNumVegPizzas++;
-		 myRevenue += 11;//veggie pizza price:$11
-		 myCheeseSupply -= 8;//cheese needed per veggie pizza
-		 myVeggieSupply -= 12;//veggies needed per veggie pizza
+		 myRevenue += 11;
+		 myCheeseSupply -= 8;
+		 myVeggieSupply -= 12;
+		 myDoughSupply -= 11;
 	 }
-	 String getName() { return myName; }
-	 int getNumCheesePizzas() { return myNumCheesePizzas; }
-	 int getNumPepperoniPizzas() { return myNumPeppPizzas; }
-	 int getNumVeggiePizzas() { return myNumVegPizzas; }
-	 int getCheeseSupply() { return myCheeseSupply; }
-	 int getPepperoniSupply() { return myPepperoniSupply; }
-	 int getVeggieSupply() { return myVeggieSupply; }
-	 double getRevenueTotal() { return myRevenue; }
-	 double getBankAccountBalance() { return myOrigAcctBal + myRevenue; }
+	 public String getName() { return myName; }
+	 public int getNumCheesePizzas() { return myNumCheesePizzas; }
+	 public int getNumPepperoniPizzas() { return myNumPeppPizzas; }
+	 public int getNumVeggiePizzas() { return myNumVegPizzas; }
+	 public int getCheeseSupply() { return myCheeseSupply; }
+	 public int getPepperoniSupply() { return myPepperoniSupply; }
+	 public int getVeggieSupply() { return myVeggieSupply; }
+	 public int getDoughSupply() { return myDoughSupply; }
+	 public double getRevenueTotal() { return myRevenue; }
+	 public double getBankAccountBalance() { return myOrigAcctBal + myRevenue; }
 } 

@@ -16,14 +16,14 @@ public class PizzaTester
 		 System.out.println(diner.getName() + "'s Pizza Parlor");
 		 diner.orderCheese();
 		 diner.orderCheese();
-		 diner.orderPepperoni();
 		 diner.orderCheese();
+		 diner.orderPepperoni();
+		 diner.orderPepperoni();
+		 diner.orderPepperoni();
 		 diner.orderPepperoni();
 		 diner.orderVeggie();
-		 diner.orderCheese();
 		 diner.orderVeggie();
-		 diner.orderPepperoni();
-		 diner.orderCheese();
+		 diner.orderVeggie();
 		 System.out.println("# of Cheese ordered is " + diner.getNumCheesePizzas());
 		 System.out.println("# of Pepperoni ordered is " + diner.getNumPepperoniPizzas());
 		 System.out.println("# of Veggie ordered is " + diner.getNumVeggiePizzas()); 
@@ -33,7 +33,9 @@ public class PizzaTester
 		 System.out.println(diner.getPepperoniSupply());
 		 System.out.print("Remaining supply of veggies in ounces is: ");
 		 System.out.println(diner.getVeggieSupply());
-		 System.out.println("\nRevenue is $" + diner.getRevenueTotal());
+		 System.out.print("Remaining supply of dough in ounces is: ");
+		 System.out.print(diner.getDoughSupply());
+		 System.out.println("\n\nRevenue is $" + diner.getRevenueTotal());
 		 System.out.println("Bank balance is now $"	+ diner.getBankAccountBalance());
 		 keyboard.close();
 	 }
