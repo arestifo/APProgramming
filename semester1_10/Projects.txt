@@ -18,3 +18,4 @@ IRS: Calculates tax from income and filing status (single or married)
 Loan: Calculates the mortgage on a house given values
 Slots: Slot machine simulator
 Coin: Simulates flipping of a coin and makes some statistics based on the data
+PizzaParlor: Simulates a pizza parlor (not really)
