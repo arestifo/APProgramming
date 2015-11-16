@@ -3,7 +3,7 @@ import static java.lang.System.out;
 public class RectangleTester {
 	public static void main(String[] args) 
 	{
-		Rectangle rectA = new Rectangle(-200, -80, 400, 160);
+		Rectangle rectA = new Rectangle(20, 20, 400, 160);
 		rectA.draw();
 		
 		out.println("Perimeter = " + rectA.getPerimeter()); 

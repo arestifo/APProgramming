@@ -31,6 +31,9 @@ public class Rectangle {
 	
 	public void draw()
 	{
-		
+		pen.up();
+		pen.move(myX, myY);
+		pen.down();
+		pen.drawRect(myWidth, myHeight);
 	}
 }
