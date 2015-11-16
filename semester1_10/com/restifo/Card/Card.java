@@ -7,31 +7,22 @@ public class Card {
 
 	public Card(String cardRank, String cardSuit, int cardPointValue) 
 	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		
 	}
 	
-	public String suit()
-	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-	}
+	public String suit() { return suit; }
 
-	public String rank()
-	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-	}
+	public String rank() { return rank; }
 
-	public int pointValue()
-	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-	}
+	public int pointValue() { return pointValue; }
 
 	public boolean matches(Card otherCard) 
 	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		return true;
 	}
 	
 	public String toString()
 	{
-		
+		return "";
 	}
 }
