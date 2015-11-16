@@ -1,4 +1,6 @@
 package com.restifo.Card;
+
+
 public class Card {
 
 	private String suit;
@@ -7,7 +9,6 @@ public class Card {
 
 	public Card(String cardRank, String cardSuit, int cardPointValue) 
 	{
-		
 	}
 	
 	public String suit() { return suit; }
