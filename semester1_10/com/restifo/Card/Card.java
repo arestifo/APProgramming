@@ -9,6 +9,9 @@ public class Card {
 
 	public Card(String cardRank, String cardSuit, int cardPointValue) 
 	{
+		rank = cardRank;
+		suit = cardSuit;
+		pointValue = cardPointValue;
 	}
 	
 	public String suit() { return suit; }
