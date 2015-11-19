@@ -6,13 +6,13 @@ public class Die {
    private int numFaces;  
    private int faceValue;
    
-   public Die ()
+   public Die()
    {
       numFaces = 6;
       faceValue = 1;
    }
    
-   public Die (int faces)
+   public Die(int faces)
    {
       if (faces < MIN_FACES)
          numFaces = 6;
@@ -21,13 +21,13 @@ public class Die {
       faceValue = 1;
    }
    
-   public int roll ()
+   public int roll()
    {
       faceValue = generator.nextInt(numFaces) + 1;
       return faceValue;
    }
    
-   public int getFaceValue ()
+   public int getFaceValue()
    {
        return faceValue;
    }

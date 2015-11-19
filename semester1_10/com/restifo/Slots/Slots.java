@@ -52,7 +52,7 @@ public class Slots {
 				{
 					out.println("Two of the numbers are the same!");
 				}
-				answer = "";
+				boolean;
 				do
 				{
 					out.print("Do you want to keep playing (y/n)? ");

@@ -1,12 +1,11 @@
 package com.restifo.Die;
 import static java.lang.System.out;
 public class SnakeEyes {
-   public static void main (String[] args)
+   public static void main(String[] args)
    {
       final int ROLLS = 500;
       int snakeEyes = 0;
-      int num1;
-      int num2;
+      int num1, num2;
       Die die1 = new Die();
       Die die2 = new Die(20);
       for (int roll = 1; roll <= ROLLS; roll++)
@@ -21,4 +20,3 @@ public class SnakeEyes {
       out.println("Ratio: " + (double)snakeEyes / ROLLS);
    }
 }
-
