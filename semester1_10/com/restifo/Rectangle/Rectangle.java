@@ -15,8 +15,8 @@ public class Rectangle {
 	{
 		myX = x;
 		myY = y;
-		myWidth = width;
-		myHeight = height;
+		myWidth = width + x;
+		myHeight = height + y;
 	}
 	
 	public double getPerimeter()
@@ -26,14 +26,11 @@ public class Rectangle {
 	
 	public double getArea()
 	{
-		return myWidth * myHeight;
+		return myY * myX;
 	}
 	
 	public void draw()
 	{
-		pen.up();
-		pen.move(myX, myY);
-		pen.down();
 		pen.drawRect(myWidth, myHeight);
 	}
 }

@@ -36,7 +36,7 @@ public class Slots {
 					out.printf("|   %d   %d   %d   |\n", showNums[1][0], showNums[1][1], showNums[1][2]);
 					out.printf("|   %d   %d   %d   |\n", showNums[2][0], showNums[2][1], showNums[2][2]);
 					out.println("\\---------------/");
-					Thread.sleep(120);
+					Thread.sleep(100);
 				}
 				out.println(CLEAR);
 				out.println("/-----SLOTS-----\\");
@@ -52,19 +52,19 @@ public class Slots {
 				{
 					out.println("Two of the numbers are the same!");
 				}
-				boolean;
-				do
+				while (true)
 				{
 					out.print("Do you want to keep playing (y/n)? ");
 					answer = scan.nextLine();
-				} while (!(answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("n")));
-				if (answer.equalsIgnoreCase("n"))
-				{
-					break;
+					if (answer.equalsIgnoreCase("n"))
+					{
+						out.println("Bye!");
+						System.exit(0);
+					}
+					else if (answer.equalsIgnoreCase("y")) break;
 				}
 			}
 		}
-		out.println("Bye!");
 		scan.close();
 	}
 }

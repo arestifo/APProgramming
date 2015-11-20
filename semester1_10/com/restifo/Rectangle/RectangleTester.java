@@ -1,12 +1,14 @@
 package com.restifo.Rectangle;
-import static java.lang.System.out;
 public class RectangleTester {
 	public static void main(String[] args) 
 	{
-		Rectangle rectA = new Rectangle(20, 20, 400, 160);
+		Rectangle rectA = new Rectangle(190, 190, 190, 190);
 		rectA.draw();
+
+		Rectangle rectB = new Rectangle(190, 60, 190, 60);
+		rectB.draw();
 		
-		out.println("Perimeter = " + rectA.getPerimeter()); 
-		out.println("Area = " + rectA.getArea());
+		Rectangle rectC = new Rectangle(60, 190, 60, 190);
+		rectC.draw();
 	}
 }
