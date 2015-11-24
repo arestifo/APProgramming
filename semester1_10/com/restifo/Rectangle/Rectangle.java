@@ -3,7 +3,7 @@ package com.restifo.Rectangle;
 import apcslib.DrawingTool;
 import apcslib.SketchPad;
 
-public class Rectangle {
+public class Rectangle { 
 	private double myX;
 	private double myY;
 	private double myWidth;
