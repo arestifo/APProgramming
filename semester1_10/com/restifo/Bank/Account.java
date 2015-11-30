@@ -7,11 +7,11 @@ public class Account
    private int acctNumber;
    private double balance;
    private String name;
-   public Account (String owner, int account, double initial)
+   public Account (int acctNumber, double balance, String name)
    {
-      name = owner;
-      acctNumber = account;
-      balance = initial;
+	   this.acctNumber = acctNumber;
+	   this.balance = balance;
+	   this.name = name;
    }
 
    public double deposit (double amount)
