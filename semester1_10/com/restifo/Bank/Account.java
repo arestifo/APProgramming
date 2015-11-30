@@ -18,12 +18,14 @@ public class Account
    {
       if (amount < 0)
       {
-         System.out.println ();
-         System.out.println ("Error: Deposit amount is invalid.");
-         System.out.println (acctNumber + " " + fmt.format(amount));
+         System.out.println();
+         System.out.println("Error: Deposit amount is invalid.");
+         System.out.println(acctNumber + " " + fmt.format(amount));
       }
       else
+      {
          balance = balance + amount;
+      }
       return balance;
    }
 
@@ -32,22 +34,26 @@ public class Account
       amount += fee;
       if (amount < 0) 
       {
-         System.out.println ();
-         System.out.println ("Error: Withdraw amount is invalid.");
-         System.out.println ("Account: " + acctNumber);
-         System.out.println ("Requested: " + fmt.format(amount));
+         System.out.println();
+         System.out.println("Error: Withdraw amount is invalid.");
+         System.out.println("Account: " + acctNumber);
+         System.out.println("Requested: " + fmt.format(amount));
       }
       else
+      {
          if (amount > balance)
          {
-            System.out.println ();
-            System.out.println ("Error: Insufficient funds.");
-            System.out.println ("Account: " + acctNumber);
-System.out.println ("Requested: " + fmt.format(amount));
-            System.out.println ("Available: " + fmt.format(balance));
+            System.out.println();
+            System.out.println("Error: Insufficient funds.");
+            System.out.println("Account: " + acctNumber);
+            System.out.println("Requested: " + fmt.format(amount));
+            System.out.println("Available: " + fmt.format(balance));
          }
          else
+         {
             balance = balance - amount;
+         }
+      }
       return balance;
    }
 
@@ -58,22 +64,18 @@ System.out.println ("Requested: " + fmt.format(amount));
 	   return account;
    }
    
-   public double addInterest ()
+   public double addInterest()
    {
-      balance += (balance * RATE);
+      balance += balance * RATE;
       return balance;
    }
-   public double getBalance ()
-   {
-      return balance;
-   }
-   public int getAccountNumber ()
-   {
-      return acctNumber;
-   }
-   public String toString ()
+   
+   public String toString()
    {
       return (acctNumber + "\t" + name + "\t" + fmt.format(balance));
    }
+   
+   public double getBalance() { return balance; }
+   public int getAccountNumber() { return acctNumber; }
 }
 
