@@ -1,5 +1,6 @@
 package com.restifo.Bank;
 import java.text.NumberFormat;
+import static java.lang.System.out;
 public class Account
 {
    private NumberFormat fmt = NumberFormat.getCurrencyInstance();
@@ -18,9 +19,9 @@ public class Account
    {
       if (amount < 0)
       {
-         System.out.println();
-         System.out.println("Error: Deposit amount is invalid.");
-         System.out.println(acctNumber + " " + fmt.format(amount));
+         out.println();
+         out.println("Error: Deposit amount is invalid.");
+         out.println(acctNumber + " " + fmt.format(amount));
       }
       else
       {
@@ -34,20 +35,20 @@ public class Account
       amount += fee;
       if (amount < 0) 
       {
-         System.out.println();
-         System.out.println("Error: Withdraw amount is invalid.");
-         System.out.println("Account: " + acctNumber);
-         System.out.println("Requested: " + fmt.format(amount));
+         out.println();
+         out.println("Error: Withdraw amount is invalid.");
+         out.println("Account: " + acctNumber);
+         out.println("Requested: " + fmt.format(amount));
       }
       else
       {
          if (amount > balance)
          {
-            System.out.println();
-            System.out.println("Error: Insufficient funds.");
-            System.out.println("Account: " + acctNumber);
-            System.out.println("Requested: " + fmt.format(amount));
-            System.out.println("Available: " + fmt.format(balance));
+            out.println();
+            out.println("Error: Insufficient funds.");
+            out.println("Account: " + acctNumber);
+            out.println("Requested: " + fmt.format(amount));
+            out.println("Available: " + fmt.format(balance));
          }
          else
          {
