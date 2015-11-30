@@ -24,3 +24,4 @@ Rectangle: Provides a surface to draw rectangles and other shapes on
 Die: Simulates a die
 ObjectPractice: Practice using objects and constructors
 Banking: Represents a bank account and provides methods to manipulate it
+Num: Practice with objects (in class assignment)
