@@ -6,7 +6,6 @@ public class ParameterPassing
 	public static void main (String[] args)
 	{
 		ParameterTester tester = new ParameterTester();
-
 	    int a1 = 111;
 	    Num a2 = new Num(222);
 	    Num a3 = new Num(333);
