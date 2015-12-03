@@ -26,3 +26,4 @@ ObjectPractice: Practice using objects and constructors
 Banking: Represents a bank account and provides methods to manipulate it
 Num: Practice with objects (in class assignment)
 ParameterPractice: Practice with null references and parameter passing
+ChangingPeople: Practice with the static method and parameter passing
