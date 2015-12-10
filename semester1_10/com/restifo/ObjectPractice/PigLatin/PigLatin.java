@@ -16,18 +16,17 @@ public class PigLatin
       Scanner scan = new Scanner (System.in);
       while (another.equalsIgnoreCase("y"))
       {
-         System.out.println ();
-         System.out.println ("Enter a sentence (no punctuation):");
+         System.out.println();
+         System.out.println("Enter a sentence (no punctuation):");
          sentence = scan.nextLine();
-         System.out.println ();
+         System.out.println();
          result = PigLatinTranslator.translate (sentence);
-         System.out.println ("That sentence in Pig Latin is:");
-         System.out.println (result);
-         System.out.println ();
-         System.out.print ("Translate another sentence (y/n)? ");
+         System.out.println("That sentence in Pig Latin is:");
+         System.out.println(result);
+         System.out.println();
+         System.out.print("Translate another sentence (y/n)? ");
          another = scan.nextLine();
       }
       scan.close();
    }
 }
-
