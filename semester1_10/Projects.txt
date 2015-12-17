@@ -29,3 +29,4 @@ ParameterPractice: Practice with null references and parameter passing
 ChangingPeople: Practice with the static method and parameter passing
 FileTester: Reads a file and prints out its contents
 TableOfBases: Displays char codes in various bases
+ExceptionPractice: Practice catching and throwing Exceptions

@@ -1,7 +1,6 @@
 package com.restifo.TableOfBases;
 import static java.lang.System.out;
 import static java.lang.System.err;
-import java.math.BigInteger;
 public class Tester {
 
 	public static void main(String[] args) 
