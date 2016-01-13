@@ -9,18 +9,45 @@ import java.util.Scanner;
  * Version 1.0
  */
 public class Ordering {
+	private static Scanner inputScan = new Scanner(System.in);
 	public static void main(String[] args)
 	{
-		Scanner inputScan = new Scanner(System.in);
-		String input = "";
+		ProductManager manager = new ProductManager();
 		out.println("Welcome to Oriental Trading online shopping!");
 		out.println("\"Useless junk for cheap\"");
 		
-		do
+		int menuChoice = 0;
+		for (;;)
 		{
-			
-		} while (input.equals(""));
-		
+			switch (menuChoice)
+			{
+				case 0:
+					out.println("Menu");
+					out.println("---------");
+					out.println("1. View item catalog");
+					out.println("2. View item details");
+					out.println("3. View shopping cart");
+					out.println("4. Exit\n");
+					out.print("> ");
+					menuChoice = inputScan.nextInt();
+					break;
+				case 1:
+					for (int i : manager.getAllProducts())
+						out.println(i);
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					exit();
+			}
+		}
+	}
+	
+	private static void exit()
+	{
 		inputScan.close();
+		System.exit(0);
 	}
 }
