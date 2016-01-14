@@ -13,8 +13,8 @@ public class ProductDetails {
 		this.quantityPer = quantityPer;
 		this.price = price;
 	}
-	private String getName() { return name; }
-	private String getDescription() { return description; }
-	private int getQuantityPer() { return quantityPer; }
-	private double getPrice() { return price; }
+	public String getName() { return name; }
+	public String getDescription() { return description; }
+	public int getQuantityPer() { return quantityPer; }
+	public double getPrice() { return price; }
 }
