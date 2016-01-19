@@ -188,13 +188,15 @@ public class Ordering {
 	
 	private static void showMenu()
 	{
-		out.printf("        Menu \t\t[Cart: %d item%s]\n", getCartAmt(), getCartAmt() != 1 ? "s" : "");
-		out.println("---------------------");
-		out.println("1. View item catalog");
-		out.println("2. View item details");
-		out.println("3. View cart");
-		out.println("4. Checkout");
-		out.println("5. Exit");
+		out.println("/------------------------\\");
+		out.printf("|          Menu          |  [Cart: %d item%s]\n", getCartAmt(), getCartAmt() != 1 ? "s" : "");
+		out.println("|------------------------|");
+		out.println("| 1. View item catalog   |");
+		out.println("| 2. Lookup item details |");
+		out.println("| 3. View cart           |");
+		out.println("| 4. Checkout            |");
+		out.println("| 5. Exit                |");
+		out.println("\\------------------------/");
 		out.println("Or, enter an item code to add it to the cart\n");
 		out.print("> ");
 	}
