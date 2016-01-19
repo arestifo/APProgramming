@@ -3,21 +3,30 @@ import static java.lang.System.out;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 /* Alex Restifo
  * 1/11/2015
  * Period 5 Programming
  * Oriental trading online shopping program
- * Version 1.0
+ * Version 1.2
  */
+@SuppressWarnings("serial")
 public class Ordering {
 	private static Scanner inputScan = new Scanner(System.in);
 	private static ProductManager manager = new ProductManager();
 	private static Map<Integer, Integer> cart = new LinkedHashMap<Integer, Integer>();
+	private static Map<Integer, Object[]> shipping = new LinkedHashMap<Integer, Object[]>()	
+	{{
+		put(1, new Object[]{"Free shipping (8-10 days)", 0});
+		put(2, new Object[]{"2 day shipping (2-4 days)", 30});
+		put(3, new Object[]{"Overnight shipping (2 days)", 60});
+	}};
+	private static Random rand = new Random();
 	public static void main(String[] args)
 	{
 		out.println("Welcome to Oriental Trading online shopping!");
-		out.println("\"Useless junk for cheap\"\n");
+		out.println("\"Party supplies for cheap!\"\n");
 		int menuChoice = 0;
 		for (;;)
 		{
@@ -49,6 +58,7 @@ public class Ordering {
 					break;
 				case 4:
 					checkout();
+					menuChoice = 0;
 					break;
 				case 5:
 					exit();
@@ -63,24 +73,43 @@ public class Ordering {
 	private static void checkout()
 	{
 		viewCart(false);
-		out.print("Is your order correct (y/n) ");
+		out.print("Is your order correct (y/n) "); inputScan.nextLine();
 		String answer = inputScan.nextLine();
-		if (answer.equals("n")) return;
+		if (!answer.equals("y")) return;
 		
-		String name, address, telephone, email;
 		out.println("Enter your shipping info:");
 		out.print("Name: ");
-		name = inputScan.nextLine();
+		inputScan.nextLine();
 		out.print("Address: ");
-		address = inputScan.nextLine();
+		String address = inputScan.nextLine();
 		out.print("Phone #: ");
-		telephone = inputScan.nextLine();
+		inputScan.nextLine();
 		out.print("Email: ");
-		email = inputScan.nextLine();
-		out.print("Enter state (ex. MD for Maryland): ");
-		String state = inputScan.nextLine();
-		double tax = manager.getTax(state);
+		inputScan.nextLine();
 		
+		out.println("\nWhich shipping option?");
+		for (int i = 1; i < shipping.size() + 1; i++)
+		{
+			Object[] shipOption = shipping.get(i);
+			out.printf("%d: %s ($%d)\n", i, shipOption[0], shipOption[1]);
+		}
+		out.print("> ");
+		int shipCost = (int)shipping.get(inputScan.nextInt())[1];
+		String state = address.split(" ")[address.split(" ").length - 2];
+		double tax = manager.getTax(state);
+		viewCart(true);
+		out.printf("| Shipping:\t\t\t\t     $%d%s|\n", shipCost, shipCost == 0 ? "\t" : "     ");
+		out.printf("| State tax:\t\t\t\t     %.2f%%%s|\n", tax, tax != 0 && tax < 10 ? "   " : tax == 0 ? "\t" : "  ");
+		out.println("|                                                    |");
+		double total = (getSubtotal() + shipCost) * (1 + tax / 100);
+		out.printf("| Total:\t\t\t\t     $%.2f  |\n", total);
+		out.println("\\----------------------------------------------------/");
+		out.print("Place order? (y/n) ");
+		String confirm = inputScan.nextLine();
+		if (!confirm.equals("y")) return;
+		
+		out.println("\nOrder placed! Your order # is " + rand.nextInt(9999) + 1);
+		out.println("Thanks for shopping with us!!");
 	}
 	
 	private static void viewCart(boolean checkout)
