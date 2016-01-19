@@ -1,6 +1,5 @@
 package com.restifo.Semester1Exam;
 
-@SuppressWarnings("unused")
 public class ProductDetails {
 	private String name;
 	private String description;

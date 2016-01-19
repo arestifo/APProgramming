@@ -2,14 +2,13 @@ package com.restifo.Semester1Exam;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 @SuppressWarnings("serial")
 public class ProductManager {
-	Map<String, Double> stateTax = new HashMap<String, Double>();
+	private Map<String, Double> stateTax = new HashMap<String, Double>();
 	private LinkedHashMap<Integer, ProductDetails> allProducts = new LinkedHashMap<Integer, ProductDetails>() 
 	{{
 		put(5040, new ProductDetails("Gleaming Half Mask", "Every party is more fun when guests are in disguise! Hand out these plastic metallic half masquerade masks to party guests. They’re a masquerade costume all by themselves! Includes elastic band. (2 dozen per unit) 6 3/4", 24, 4.95));
@@ -28,11 +27,13 @@ public class ProductManager {
 		initMap();
 	}
 	
-	public ProductDetails getProduct(int itemCode) { return allProducts.get(itemCode); }
 	public int[] getAllProducts()
 	{
 		return allProducts.keySet().stream().mapToInt(x -> x).toArray();
 	}
+	public ProductDetails getProduct(int itemCode) { return allProducts.get(itemCode); }
+	public boolean productExists(int item) { return allProducts.containsKey(item); }
+	public double getTax(String state){	return stateTax.get(state.toUpperCase()); }
 	private void initMap()
 	{
 		Scanner in = null;
