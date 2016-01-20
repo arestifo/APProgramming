@@ -104,12 +104,13 @@ public class Ordering {
 		double total = (getSubtotal() + shipCost) * (1 + tax / 100);
 		out.printf("| Total:\t\t\t\t     $%.2f  |\n", total);
 		out.println("\\----------------------------------------------------/");
-		out.print("Place order? (y/n) ");
+		out.print("Place order? (y/n) "); inputScan.nextLine();
 		String confirm = inputScan.nextLine();
 		if (!confirm.equals("y")) return;
 		
 		out.println("\nOrder placed! Your order # is " + rand.nextInt(9999) + 1);
 		out.println("Thanks for shopping with us!!");
+		cart = new LinkedHashMap<Integer, Integer>(); // Reset the cart
 	}
 	
 	private static void viewCart(boolean checkout)
