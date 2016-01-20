@@ -108,7 +108,7 @@ public class Ordering {
 		String confirm = inputScan.nextLine();
 		if (!confirm.equals("y")) return;
 		
-		out.println("\nOrder placed! Your order # is " + rand.nextInt(9999) + 1);
+		out.println("\nOrder placed! Your order # is " + (rand.nextInt(9999) + 1));
 		out.println("Thanks for shopping with us!!");
 		cart = new LinkedHashMap<Integer, Integer>(); // Reset the cart
 	}
