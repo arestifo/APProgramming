@@ -110,6 +110,7 @@ public class Ordering {
 		
 		out.println("\nOrder placed! Your order # is " + (rand.nextInt(9999) + 1));
 		out.println("Thanks for shopping with us!!");
+		out.println("Press enter to go back"); pause();
 		cart = new LinkedHashMap<Integer, Integer>(); // Reset the cart
 	}
 	
