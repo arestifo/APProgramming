@@ -173,7 +173,7 @@ public class Ordering {
 		else
 			cart.put(item, units);
 		String name = manager.getProduct(item).getName();
-		out.printf("Added %d %s%s to cart\n\n", units, name, units > 1 && !(name.charAt(name.length() - 1) == 's') ? "s" : "");
+		out.printf("Added %d %s%s to cart\n\n", units, name, units > 1 && name.charAt(name.length() - 1) != 's' ? "s" : "");
 	}
 	
 	private static void showItemDetails()
