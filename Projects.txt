@@ -39,3 +39,4 @@ Semester 1:
 	GasMileage: Practice with passing parameters to different classes (late work)
 Semester 2:
 	Guests: An introduction to array searching
+	SearchPractice: Practice with Searches

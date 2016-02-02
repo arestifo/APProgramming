@@ -1,4 +1,4 @@
-package com.restifo.Guests;
+package com.restifo.SearchPractice;
 import static java.lang.System.out;
 
 import java.util.Scanner;
