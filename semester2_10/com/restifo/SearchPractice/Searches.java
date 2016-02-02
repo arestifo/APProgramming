@@ -21,6 +21,9 @@ public class Searches {
 				low = middle + 1;
 			middle = (low + high) / 2;
 		}
-		return middle; // ??????
+		if (numbers[middle] == target)
+			return middle;
+		else
+			return -1;
 	}
 }
