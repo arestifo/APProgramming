@@ -1,4 +1,5 @@
 package com.restifo.SearchPractice;
+import static java.lang.System.out;
 public class Sorts
 {
    public static void selectionSort (int[] numbers)
@@ -16,11 +17,11 @@ public class Sorts
          temp = numbers[min];
          numbers[min] = numbers[index];
          numbers[index] = temp;
-         System.out.println();
-         System.out.println("Grades at selection sort step " + ++step + ": ");
+         out.println();
+         out.println("Grades at selection sort step " + ++step + ": ");
          for (int i = 0; i < numbers.length-1; i++)
-         	System.out.print (numbers[i] + "   ");
-         System.out.println();
+         	out.print (numbers[i] + "   ");
+         out.println();
       }
    }
    
@@ -39,11 +40,11 @@ public class Sorts
          }
             
          numbers[position] = key;
-         System.out.println();
-         System.out.println("Grades at insertion sort step " + ++step + ": ");
+         out.println();
+         out.println("Grades at insertion sort step " + ++step + ": ");
          for (int i = 0; i < numbers.length-1; i++)
-         	System.out.print (numbers[i] + "   ");
-         System.out.println();
+         	out.print (numbers[i] + "   ");
+         out.println();
  
       }
    }
