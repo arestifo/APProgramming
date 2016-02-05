@@ -40,3 +40,4 @@ Semester 1:
 Semester 2:
 	Guests: An introduction to array searching
 	SearchPractice: Practice with Searches
+	Sorts: Sorting algorithms
