@@ -33,7 +33,7 @@ public class Sorts
          int key = arr[index];
          int position = index;
 
-         while (position > 0 && arr[position-1] < key)
+         while (position > 0 && arr[position-1] > key)
          {
             arr[position] = arr[position-1];
             position--;
