@@ -127,7 +127,7 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     // set the fields
     this.picture=picture;
     zoomFactor=1;
-    
+    System.out.println("ayylmao creating");
     // create the window and set things up
     createWindow();
   }
@@ -227,13 +227,13 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
   {
     // create the picture frame and initialize it
     createAndInitPictureFrame();
-    
+
     // set up the menu bar
     setUpMenuBar();
-    
+
     //create the information panel
     createInfoPanel();
-    
+    System.out.println("ayylmao DONE");
     //creates the scrollpane for the picture
     createAndInitScrollingImage();
     
@@ -431,13 +431,13 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     // create the font
     Font largerFont = new Font(infoPanel.getFont().getName(),
                                infoPanel.getFont().getStyle(),14);
-    
+
     // create the pixel location panel
     JPanel locationPanel = createLocationPanel(largerFont);
-    
+    System.out.println("ayylmao whatthefuck");
     // create the color information panel
     JPanel colorInfoPanel = createColorInfoPanel(largerFont);
-    
+
     // add the panels to the info panel
     infoPanel.add(BorderLayout.NORTH,locationPanel);
     infoPanel.add(BorderLayout.SOUTH,colorInfoPanel); 
@@ -817,9 +817,9 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
   /**
    * Test Main.  It will explore the beach 
    */
-  public static void main( String args[])
+  public static void main(String args[])
   {
-    Picture pix = new Picture("beach.jpg");
+    Picture pix = new Picture("resources/PictureLab/img/beach.jpg");
     pix.explore();
   }
   

@@ -74,10 +74,9 @@ public class SimplePicture implements DigitalPicture
   */
  public SimplePicture(String fileName)
  {
-   
+	 System.out.println("ayylmao xD");
    // load the picture into the buffered image 
    load(fileName);
-   
  }
  
  /**
@@ -426,6 +425,7 @@ public class SimplePicture implements DigitalPicture
   */
  public void explore()
  {
+	 System.out.println("ayylmao explore");
    // create a copy of the current picture and explore it
    new PictureExplorer(new SimplePicture(this));
  }
@@ -467,6 +467,7 @@ public class SimplePicture implements DigitalPicture
    
    File file = new File(this.fileName);
 
+   //System.out.println(this.fileName);
    if (!file.canRead()) 
    {
      // try adding the media path 
@@ -490,11 +491,12 @@ public class SimplePicture implements DigitalPicture
   */
  public boolean load(String fileName)
  {
+	 System.out.println("ayylmao KEK");
      try {
          this.loadOrFail(fileName);
          return true;
-
      } catch (Exception ex) {
+    	 ex.printStackTrace();
          System.out.println("There was an error trying to open " + fileName);
          bufferedImage = new BufferedImage(600,200,
                                            BufferedImage.TYPE_INT_RGB);
@@ -616,7 +618,6 @@ public class SimplePicture implements DigitalPicture
    
    // try to load the picture into the buffered image from the file name
    result = load(fileName);
-   
    // show the picture in a picture frame
    show();
    
