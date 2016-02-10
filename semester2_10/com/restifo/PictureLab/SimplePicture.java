@@ -74,7 +74,6 @@ public class SimplePicture implements DigitalPicture
   */
  public SimplePicture(String fileName)
  {
-	 System.out.println("ayylmao xD");
    // load the picture into the buffered image 
    load(fileName);
  }
@@ -425,7 +424,6 @@ public class SimplePicture implements DigitalPicture
   */
  public void explore()
  {
-	 System.out.println("ayylmao explore");
    // create a copy of the current picture and explore it
    new PictureExplorer(new SimplePicture(this));
  }
@@ -491,7 +489,6 @@ public class SimplePicture implements DigitalPicture
   */
  public boolean load(String fileName)
  {
-	 System.out.println("ayylmao KEK");
      try {
          this.loadOrFail(fileName);
          return true;

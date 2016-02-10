@@ -127,7 +127,6 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
     // set the fields
     this.picture=picture;
     zoomFactor=1;
-    System.out.println("ayylmao creating");
     // create the window and set things up
     createWindow();
   }
@@ -233,7 +232,6 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
     //create the information panel
     createInfoPanel();
-    System.out.println("ayylmao DONE");
     //creates the scrollpane for the picture
     createAndInitScrollingImage();
     
@@ -249,9 +247,9 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
   private void setUpNextAndPreviousButtons()
   {
     // create the image icons for the buttons
-    Icon prevIcon = new ImageIcon(DigitalPicture.class.getResource("leftArrow.gif"), 
+    Icon prevIcon = new ImageIcon("resources/PictureLab/leftArrow.gif", 
                                   "previous index");
-    Icon nextIcon = new ImageIcon(DigitalPicture.class.getResource("rightArrow.gif"), 
+    Icon nextIcon = new ImageIcon("resources/PictureLab/rightArrow.gif", 
                                   "next index");
     // create the arrow buttons
     colPrevButton = new JButton(prevIcon);
@@ -434,7 +432,6 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
 
     // create the pixel location panel
     JPanel locationPanel = createLocationPanel(largerFont);
-    System.out.println("ayylmao whatthefuck");
     // create the color information panel
     JPanel colorInfoPanel = createColorInfoPanel(largerFont);
 

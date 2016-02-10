@@ -12,8 +12,6 @@ import java.awt.image.BufferedImage;
  */
 public class Picture extends SimplePicture 
 {
-  ///////////////////// constructors //////////////////////////////////
-  
   /**
    * Constructor that takes no arguments 
    */
@@ -219,9 +217,7 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-	System.out.println("ayylmao 1");
     Picture beach = new Picture("resources/PictureLab/img/beach.jpg");
-    System.out.println("ayylmao 2");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
