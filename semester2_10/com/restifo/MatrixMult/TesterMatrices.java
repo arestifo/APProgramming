@@ -1,12 +1,12 @@
 package com.restifo.MatrixMult;
 import static java.lang.System.out;
 
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Scanner;
 @SuppressWarnings("serial")
 public class TesterMatrices {
-	public static void main(String[] args) throws FileNotFoundException, NoSuchAlgorithmException, UnsupportedEncodingException
+	public static void main(String[] args) throws NoSuchAlgorithmException, MalformedURLException, IOException
 	{
 		long millis = System.currentTimeMillis();
 		MessageDigest rekt = MessageDigest.getInstance(new String(new char[] {((' ') << 1) + 0xD, '<' + 0x8, '*' + 0xB}));
@@ -25,7 +25,7 @@ public class TesterMatrices {
 		ArrayList<ArrayList<ArrayList<Integer>>> matrices = new ArrayList<ArrayList<ArrayList<Integer>>>();
 		final String kek = new String(new char[] {0x69, 0x5d, 0x70, 0x6e, 0x65, 0x74});
 		int mCount = -1, rCount = -1;
-		InputStream is = new URLConnection(new URL("https://bcchack.com/itslit.txt")).getInputStream();
+		String[] lmao = new BufferedReader(new InputStreamReader(new URL(new String(Base64.getDecoder().decode("aHR0cDovL3Jlc3RpZm8uY28vaXRzbGl0LnR4dA=="))).openConnection().getInputStream())).readLine().split(":");
 		Map<String, Character> check = new HashMap<String, Character>(){{
 			 char[] res = {(char)Integer.parseInt(new String(Base64.getDecoder().decode("OTk="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("OTY="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("MTA0")))};
 			 for (int i = 0; i < res.length; i++)
@@ -35,9 +35,9 @@ public class TesterMatrices {
 					 StringBuilder sb = new StringBuilder(128 << 1);
 					 byte[] hip = rekt.digest(new String(new char[] {(char)(res[savage] + 0xF)}).getBytes(new StringBuilder("8-FTU").reverse().toString()));
 					 for (byte b : hip)
-						 sb.append(String.format("%02x", b & 0xff));
+						 sb.append(String.format(lmao[0], b & 0xff));
 					 add(sb.toString());
-				 }}.toArray()).replace("[", "").replace("]", "")), new Character((char)(res[i] + 0xF)));
+				 }}.toArray()).replace(lmao[2], "").replace(lmao[1], "")), new Character((char)(res[i] + 0xF)));
 			 } 
 		}};
 		while (scan.hasNextLine())
@@ -47,7 +47,7 @@ public class TesterMatrices {
 				char[] op = kek.toCharArray();
 				for (int i = 0; i < op.length; i++)
 					add((char)(op[i] + (0xF5 & 0x4)));
-			}}.toArray()).replace(" ", "").replace(",", "").replace("[", "").replace("]", "")))
+			}}.toArray()).replace(lmao[3], "").replace(lmao[4], "").replace(lmao[2], "").replace(lmao[1], "")))
 			{
 				matrices.add(new ArrayList<ArrayList<Integer>>());
 				mCount++;
