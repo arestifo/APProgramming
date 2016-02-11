@@ -33,7 +33,7 @@ public class Sorts
          int key = arr[index];
          int position = index;
 
-         while (position > 0 && arr[position-1] > key)
+         while (position > 0 && arr[position-1] < key)
          {
             arr[position] = arr[position-1];
             position--;
@@ -42,7 +42,7 @@ public class Sorts
          arr[position] = key;
          out.println();
          out.println("Grades at insertion sort step " + ++step + ": ");
-         for (int i = 0; i < arr.length-1; i++)
+         for (int i = 0; i < arr.length; i++)
          	out.print (arr[i] + "   ");
          out.println();
  
