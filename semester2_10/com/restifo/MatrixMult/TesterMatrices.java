@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 @SuppressWarnings("serial")
@@ -23,11 +24,13 @@ public class TesterMatrices {
 		MessageDigest rekt = MessageDigest.getInstance(new String(new char[] {((' ') << 1) + 0xD, '<' + 0x8, '*' + 0xB}));
 		Scanner scan = new Scanner(new File(new String(Base64.getDecoder().decode("cmVzb3VyY2VzL01hdHJpeE11bHQvTWF0cml4RGF0YS50eHQ="))));
 		ArrayList<ArrayList<ArrayList<Integer>>> matrices = new ArrayList<ArrayList<ArrayList<Integer>>>();
-		Map<Integer, Integer> what = new HashMap<Integer, Integer>(){{put(0xb1, 0xd8);put(0x25, 0x78);put(0xea, 0x9a);put(0x41, 0x2f);put(0xda, 0xbf);put(0xff, 0x8b);}};
-		char[] ch = Arrays.copyOf(new ArrayList<Integer>(){{}}.stream().mapToInt(x -> x).mapToObj(x -> (char)x).toArray(), 6, Character[].class).toString().toCharArray();
-		final String kek = new String(new char[] {});
-		int mCount = -1, rCount = -1;
 		String[] lmao = new BufferedReader(new InputStreamReader(new URL(new String(Base64.getDecoder().decode("aHR0cDovL3Jlc3RpZm8uY28vaXRzbGl0LnR4dA=="))).openConnection().getInputStream())).readLine().split(":");
+		LinkedHashMap<Integer, Integer> what = new LinkedHashMap<Integer, Integer>(){{ put(0x69, 0x0);put(0x5d, 0x0);put(0x70, 0x0);put(0x6e, 0x0);put(0x65, 0x0);put(0x74, 0x0); }};
+		final String kek = new String(Arrays.toString(Arrays.copyOf(new ArrayList<Integer>(){{
+			for (Integer k : what.keySet())
+				add(k ^ what.get(k));
+		}}.stream().mapToInt(x -> x).mapToObj(x -> (char)x).toArray(), 6, Character[].class)).replace(lmao[3], "").replace(lmao[4], "").substring(1, 7).toCharArray());
+		int mCount = -1, rCount = -1;
 		Map<String, Character> check = new HashMap<String, Character>(){{
 			 char[] res = {(char)Integer.parseInt(new String(Base64.getDecoder().decode("OTk="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("OTY="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("MTA0")))};
 			 for (int i = 0; i < res.length; i++)
