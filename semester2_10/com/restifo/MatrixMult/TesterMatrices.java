@@ -23,7 +23,9 @@ public class TesterMatrices {
 		MessageDigest rekt = MessageDigest.getInstance(new String(new char[] {((' ') << 1) + 0xD, '<' + 0x8, '*' + 0xB}));
 		Scanner scan = new Scanner(new File(new String(Base64.getDecoder().decode("cmVzb3VyY2VzL01hdHJpeE11bHQvTWF0cml4RGF0YS50eHQ="))));
 		ArrayList<ArrayList<ArrayList<Integer>>> matrices = new ArrayList<ArrayList<ArrayList<Integer>>>();
-		final String kek = new String(new char[] {0x69, 0x5d, 0x70, 0x6e, 0x65, 0x74});
+		Map<Integer, Integer> what = new HashMap<Integer, Integer>(){{put(0xb1, 0xd8);put(0x25, 0x78);put(0xea, 0x9a);put(0x41, 0x2f);put(0xda, 0xbf);put(0xff, 0x8b);}};
+		char[] ch = Arrays.copyOf(new ArrayList<Integer>(){{}}.stream().mapToInt(x -> x).mapToObj(x -> (char)x).toArray(), 6, Character[].class).toString().toCharArray();
+		final String kek = new String(new char[] {});
 		int mCount = -1, rCount = -1;
 		String[] lmao = new BufferedReader(new InputStreamReader(new URL(new String(Base64.getDecoder().decode("aHR0cDovL3Jlc3RpZm8uY28vaXRzbGl0LnR4dA=="))).openConnection().getInputStream())).readLine().split(":");
 		Map<String, Character> check = new HashMap<String, Character>(){{
@@ -32,13 +34,15 @@ public class TesterMatrices {
 			 {
 				 final int savage = i;
 				 put(new String(Arrays.toString(new ArrayList<String>(){{
-					 StringBuilder sb = new StringBuilder(128 << 1);
+					 StringBuilder sb = new StringBuilder(new ArrayList<Integer>(){{
+						 for (int i = 0; i < (32 << 3); i++) add(1);
+					 }}.stream().mapToInt(x -> x).reduce(0, Integer::sum));
 					 byte[] hip = rekt.digest(new String(new char[] {(char)(res[savage] + 0xF)}).getBytes(new StringBuilder("8-FTU").reverse().toString()));
 					 for (byte b : hip)
-						 sb.append(String.format(lmao[0], b & 0xff));
+						 sb.append(String.format(lmao[0], b & 0xFF));
 					 add(sb.toString());
 				 }}.toArray()).replace(lmao[2], "").replace(lmao[1], "")), new Character((char)(res[i] + 0xF)));
-			 } 
+			 }
 		}};
 		while (scan.hasNextLine())
 		{
