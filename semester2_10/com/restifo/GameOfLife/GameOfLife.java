@@ -4,6 +4,9 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import javax.swing.JPanel;
 
@@ -15,6 +18,7 @@ public class GameOfLife extends JPanel {
 	{
 		setPreferredSize(new Dimension(601, 601));
 		initCells();
+		readData();
 	}
 	
 	private void initCells()
@@ -24,22 +28,42 @@ public class GameOfLife extends JPanel {
 			for (int y = 0; y < 20; y++)
 			{
 				cells[x][y] = new Cell(this, y * 30, x * 30, 30);
-				//cells[x][y].alive = Math.random() > 0.5 ? true : false;
 			}
 		}
 	}
 	
-	@Override
-	public void paint(Graphics g)
+	private void readData()
 	{
-		Graphics2D g2d = (Graphics2D) g;
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		try 
+		{
+			 Scanner scan = new Scanner(new File("resources/GameOfLife/lifeData.txt"));
+			 int iters = Integer.parseInt(scan.nextLine());
+			 for (int i = 0; i < iters; i++)
+			 {
+				 String[] line = scan.nextLine().split("    ");
+				 int row = Integer.parseInt(line[1]) - 1; // for some reason line[0] is ""
+				 int col = Integer.parseInt(line[2]) - 1;
+				 cells[row][col].alive = true;
+			 }
+			 scan.close();
+		} 
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace(); 
+		}
+	}
+	
+	@Override
+	public void paint(Graphics gr)
+	{
+		Graphics2D g = (Graphics2D) gr;
+		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		
 		for (Cell[] cc : cells)
 		{
 			for (Cell c : cc)
 			{
-				c.paint(g2d);
+				c.paint(g);
 			}
 		}
 	}
