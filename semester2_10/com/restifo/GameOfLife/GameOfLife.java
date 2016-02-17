@@ -1,5 +1,6 @@
 package com.restifo.GameOfLife;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -12,26 +13,19 @@ public class GameOfLife extends JPanel {
 
 	public GameOfLife()
 	{
+		setPreferredSize(new Dimension(601, 601));
 		initCells();
 	}
 	
 	private void initCells()
 	{
-		int tHw = 30;
-		int tX = 0;
-		int tY = 0;
-		boolean alive = false;
 		for (int x = 0; x < 20; x++)
 		{
 			for (int y = 0; y < 20; y++)
 			{
-				cells[x][y] = new Cell(this, tX, tY, tHw);
-				cells[x][y].setAlive(alive);
-				alive = !alive;
-				tX += 30;
+				cells[x][y] = new Cell(this, y * 30, x * 30, 30);
+				//cells[x][y].alive = Math.random() > 0.5 ? true : false;
 			}
-			tX = 0;
-			tY += 30;
 		}
 	}
 	
