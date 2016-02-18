@@ -27,7 +27,7 @@ public class GameOfLife extends JPanel {
 		nextGen = new Cell[h][w];
 		setPreferredSize(new Dimension(h * cellSize + 1, w * cellSize + 1));
 		initCells();
-		readData(true);
+		readData(false);
 	}
 	
 	private void initCells()
@@ -46,11 +46,13 @@ public class GameOfLife extends JPanel {
 		Cell[][] nextGen = new Cell[h][w]; // bad code
 		for (int row = 0; row < h; row++)
 		{
-			for (int col = 0; col < w; col++)
-			{
-				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
-			}
+//			for (int col = 0; col < w; col++)
+//			{
+//				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
+//			}
+			nextGen[row] = cells[row].clone();
 		}  // end bad code
+		//Cell[][] nextGen = cells;
 		
 		for (int row = 0; row < h; row++)
 		{
