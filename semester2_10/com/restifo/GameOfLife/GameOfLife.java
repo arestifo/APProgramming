@@ -25,7 +25,7 @@ public class GameOfLife extends JPanel {
 		cells = new Cell[h][w];
 		setPreferredSize(new Dimension(h * cellSize + 1, w * cellSize + 1));
 		initCells();
-		readData();
+		readData(false);
 	}
 	
 	private void initCells()
@@ -41,14 +41,14 @@ public class GameOfLife extends JPanel {
 	
 	public void doNextGen()	
 	{
-		Cell[][] nextGen = new Cell[h][w];
+		Cell[][] nextGen = new Cell[h][w]; // bad code
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
 			{
-				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize);
+				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
 			}
-		} 
+		}  // end bad code
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
@@ -74,7 +74,7 @@ public class GameOfLife extends JPanel {
 	
 	private int getNeighbors(Cell cell)
 	{
-		// generate all possible neighbors and check if they're valid
+		// check all possible neighbors
 		int x = cell.ix;
 		int y = cell.iy;
 		int[][] possible = {{x, y + 1}, {x - 1, y + 1}, {x - 1, y}, {x - 1, y - 1}, {x, y - 1}, {x + 1, y - 1}, {x + 1, y}, {x + 1, y + 1}};
@@ -97,25 +97,54 @@ public class GameOfLife extends JPanel {
 		return neighbors;
 	}
 	
-	private void readData()
+	private void readData(boolean fromFile)
 	{
-		try 
+		if (fromFile)
 		{
-			 Scanner scan = new Scanner(new File("resources/GameOfLife/lifeData.txt"));
-			 int iters = Integer.parseInt(scan.nextLine());
-			 for (int i = 0; i < iters; i++)
-			 {
-				 String[] line = scan.nextLine().split("    ");
-				 int row = Integer.parseInt(line[1]) - 1; // for some reason line[0] is ""
-				 int col = Integer.parseInt(line[2]) - 1;
-				 cells[row][col].alive = true;
-			 }
-			 scan.close();
-		} 
-		catch (FileNotFoundException e) 
-		{
-			e.printStackTrace(); 
+			try 
+			{
+				 Scanner scan = new Scanner(new File("resources/GameOfLife/lifeData.txt"));
+				 int iters = Integer.parseInt(scan.nextLine());
+				 for (int i = 0; i < iters; i++)
+				 {
+					 String[] line = scan.nextLine().split("    ");
+					 int row = Integer.parseInt(line[1]) - 1; // for some reason line[0] is ""
+					 int col = Integer.parseInt(line[2]) - 1;
+					 cells[row][col].alive = true;
+				 }
+				 scan.close();
+			} 
+			catch (FileNotFoundException e) 
+			{
+				e.printStackTrace(); 
+			}
 		}
+		else
+		{
+			for (int row = 0; row < h; row++)
+			{
+				for (int col = 0; col < w; col++)
+				{
+					cells[row][col].alive = Math.random() > 0.75 ? true : false;
+				}
+			}
+		}
+	}
+	
+	public int getAlive()
+	{
+		int ret = 0;
+		for (int row = 0; row < h; row++)
+		{
+			for (int col = 0; col < w; col++)
+			{
+				if (cells[row][col].alive == true)
+				{
+					ret++;
+				}
+			}
+		}
+		return ret;
 	}
 	
 	@Override
