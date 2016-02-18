@@ -6,44 +6,50 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.JPanel;
 
 public class GameOfLife extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private final int h = 20;
-	private final int w = 20;
-	Cell[][] cells = new Cell[h][w];
+	private final int h;
+	private final int w;
+	private final int cellSize;
+	Cell[][] cells;
 
-	public GameOfLife()
+	public GameOfLife(int h, int w, int cellSize)
 	{
-		setPreferredSize(new Dimension(601, 601));
+		this.h = h;
+		this.w = w;
+		this.cellSize = cellSize;
+		cells = new Cell[h][w];
+		setPreferredSize(new Dimension(h * cellSize + 1, w * cellSize + 1));
 		initCells();
 		readData();
 	}
 	
 	private void initCells()
 	{
-		for (int row = 0; row < 20; row++)
+		for (int row = 0; row < h; row++)
 		{
-			for (int col = 0; col < 20; col++)
+			for (int col = 0; col < w; col++)
 			{
-				cells[row][col] = new Cell(this, col * 30, row * 30, row, col, 30);
+				cells[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize);
 			}
 		}
 	}
 	
 	public void doNextGen()
 	{
-		Cell[][] nextGen = new Cell[h][w];
-		for (int row = 0; row < 20; row++)
+		Cell[][] nextGen = new Cell[h][w]; // bad code
+		for (int row = 0; row < h; row++)
 		{
-			for (int col = 0; col < 20; col++)
+			for (int col = 0; col < w; col++)
 			{
-				nextGen[row][col] = new Cell(this, col * 30, row * 30, row, col, 30);
+				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize);
 			}
-		}
+		} // end bad code
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
@@ -58,7 +64,7 @@ public class GameOfLife extends JPanel {
 				{
 					nextGen[row][col].alive = false;
 				}
-				if (cell.alive == true && (neighbors == 2 || neighbors == 3)) // probably not necessary
+				if (cell.alive == true && (neighbors == 2 || neighbors == 3))
 				{
 					nextGen[row][col].alive = true;
 				}
