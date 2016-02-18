@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 public class Runner {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		JFrame frame = new JFrame("Game of life");
 		GameOfLife game = new GameOfLife();
@@ -12,10 +12,16 @@ public class Runner {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.pack();
-		
-		while (true) // game loop
+	
+		for (int i = 0; i < 5; i++)
 		{
+			game.doNextGen();
 			game.repaint();
 		}
+//		while (true) // game loop
+//		{
+//			game.doNextGen();
+//			game.repaint();
+//		}
 	}
 }

@@ -12,7 +12,9 @@ import javax.swing.JPanel;
 
 public class GameOfLife extends JPanel {
 	private static final long serialVersionUID = 1L;
-	Cell[][] cells = new Cell[20][20];
+	private final int h = 20;
+	private final int w = 20;
+	Cell[][] cells = new Cell[h][w];
 
 	public GameOfLife()
 	{
@@ -23,13 +25,71 @@ public class GameOfLife extends JPanel {
 	
 	private void initCells()
 	{
-		for (int x = 0; x < 20; x++)
+		for (int row = 0; row < 20; row++)
 		{
-			for (int y = 0; y < 20; y++)
+			for (int col = 0; col < 20; col++)
 			{
-				cells[x][y] = new Cell(this, y * 30, x * 30, 30);
+				cells[row][col] = new Cell(this, col * 30, row * 30, row, col, 30);
 			}
 		}
+	}
+	
+	public void doNextGen()
+	{
+		Cell[][] nextGen = new Cell[h][w];
+		for (int row = 0; row < 20; row++)
+		{
+			for (int col = 0; col < 20; col++)
+			{
+				nextGen[row][col] = new Cell(this, col * 30, row * 30, row, col, 30);
+			}
+		}
+		for (int row = 0; row < h; row++)
+		{
+			for (int col = 0; col < w; col++)
+			{
+				Cell cell = cells[row][col];
+				int neighbors = getNeighbors(cell);
+				if (cell.alive == false && neighbors == 3)
+				{
+					nextGen[row][col].alive = true;
+				}
+				if (cell.alive == true && (neighbors <= 1 || neighbors >= 4))
+				{
+					nextGen[row][col].alive = false;
+				}
+				if (cell.alive == true && (neighbors == 2 || neighbors == 3)) // probably not necessary
+				{
+					nextGen[row][col].alive = true;
+				}
+			}	
+		}
+		cells = nextGen;
+	}
+	
+	private int getNeighbors(Cell cell)
+	{
+		// generate all possible neighbors and check if they're valid (i can't find a better way to do this smfh)
+		int x = cell.ix;
+		int y = cell.iy;
+		int[][] possible = {{x, y + 1}, {x - 1, y + 1}, {x - 1, y}, {x - 1, y - 1}, {x, y - 1}, {x + 1, y - 1}, {x + 1, y}, {x + 1, y + 1}};
+		int neighbors = 0;
+		for (int[] pos : possible)
+		{
+			int nX = pos[0], nY = pos[1]; // neighbor x & y
+			if (nX < 0 || nX > cells.length - 1 || nY < 0 || nY > cells.length - 1)
+			{
+				continue; // not a valid neighbor, so skip it
+			}
+			else
+			{
+				if (cells[nX][nY].alive == true)
+				{
+					neighbors++;
+				}
+			}
+		}
+		return neighbors;
 	}
 	
 	private void readData()
