@@ -17,7 +17,7 @@ public class GameOfLife extends JPanel {
 	private final int w;
 	private final int cellSize;
 	Cell[][] cells;
-
+	
 	public GameOfLife(int h, int w, int cellSize)
 	{
 		this.h = h;
@@ -42,14 +42,14 @@ public class GameOfLife extends JPanel {
 	
 	public void doNextGen()
 	{
-		Cell[][] nextGen = new Cell[h][w]; // bad code
+		Cell[][] nextGen = new Cell[h][w];
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
 			{
 				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize);
 			}
-		} // end bad code
+		} 
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
@@ -75,7 +75,7 @@ public class GameOfLife extends JPanel {
 	
 	private int getNeighbors(Cell cell)
 	{
-		// generate all possible neighbors and check if they're valid (i can't find a better way to do this smfh)
+		// generate all possible neighbors and check if they're valid
 		int x = cell.ix;
 		int y = cell.iy;
 		int[][] possible = {{x, y + 1}, {x - 1, y + 1}, {x - 1, y}, {x - 1, y - 1}, {x, y - 1}, {x + 1, y - 1}, {x + 1, y}, {x + 1, y + 1}};

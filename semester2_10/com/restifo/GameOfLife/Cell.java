@@ -11,7 +11,6 @@ public class Cell {
 	int hw;
 	GameOfLife game;
 	public boolean alive = false;
-	//public boolean debug = false;
 	public Cell(GameOfLife game, int x, int y, int ix, int iy, int hw) // hw = height & width bc square
 	{
 		this.game = game;
@@ -24,10 +23,6 @@ public class Cell {
 	
 	public void paint(Graphics2D g)
 	{
-//		if (debug){
-//			g.setColor(alive ? Color.red : Color.gray);}
-//		else{
-//			g.setColor(alive ? Color.blue : Color.white);}
 		g.setColor(alive ? Color.blue : Color.white);
 		g.fillRect(x, y, hw, hw);
 		g.setColor(Color.black);
