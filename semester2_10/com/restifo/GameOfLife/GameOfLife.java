@@ -16,6 +16,7 @@ public class GameOfLife extends JPanel {
 	private final int w;
 	private final int cellSize;
 	Cell[][] cells;
+	Cell[][] nextGen;
 	
 	public GameOfLife(int h, int w, int cellSize)
 	{
@@ -23,9 +24,10 @@ public class GameOfLife extends JPanel {
 		this.w = w;
 		this.cellSize = cellSize;
 		cells = new Cell[h][w];
+		nextGen = new Cell[h][w];
 		setPreferredSize(new Dimension(h * cellSize + 1, w * cellSize + 1));
 		initCells();
-		readData(false);
+		readData(true);
 	}
 	
 	private void initCells()
@@ -49,21 +51,29 @@ public class GameOfLife extends JPanel {
 				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
 			}
 		}  // end bad code
+		
+		for (int row = 0; row < h; row++)
+		{
+			for (int col = 0; col < w; col++)
+			{
+				nextGen[row][col].alive = false;
+			}
+		}
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
 			{
 				Cell cell = cells[row][col];
 				int neighbors = getNeighbors(cell);
-				if (cell.alive == false && neighbors == 3)
+				if (!cell.alive && neighbors == 3)
 				{
 					nextGen[row][col].alive = true;
 				}
-				if (cell.alive == true && (neighbors <= 1 || neighbors >= 4))
+				if (cell.alive && (neighbors <= 1 || neighbors >= 4))
 				{
 					nextGen[row][col].alive = false;
 				}
-				if (cell.alive == true && (neighbors == 2 || neighbors == 3))
+				if (cell.alive && (neighbors == 2 || neighbors == 3))
 				{
 					nextGen[row][col].alive = true;
 				}
@@ -103,7 +113,7 @@ public class GameOfLife extends JPanel {
 		{
 			try 
 			{
-				 Scanner scan = new Scanner(new File("resources/GameOfLife/lifeData.txt"));
+				 Scanner scan = new Scanner(new File("resources/GameOfLife/legitness.txt"));
 				 int iters = Integer.parseInt(scan.nextLine());
 				 for (int i = 0; i < iters; i++)
 				 {

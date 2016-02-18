@@ -14,7 +14,7 @@ public class Runner {
 	public static void main(String[] args) throws InterruptedException 
 	{
 		JFrame frame = new JFrame("Game of life");
-		game = new GameOfLife(30, 30, 20);
+		game = new GameOfLife(50, 50, 10);
 		registerKeys();
 		frame.add(game);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
