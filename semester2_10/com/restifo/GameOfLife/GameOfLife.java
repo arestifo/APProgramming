@@ -6,7 +6,6 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.JPanel;
@@ -40,7 +39,7 @@ public class GameOfLife extends JPanel {
 		}
 	}
 	
-	public void doNextGen()
+	public void doNextGen()	
 	{
 		Cell[][] nextGen = new Cell[h][w];
 		for (int row = 0; row < h; row++)
