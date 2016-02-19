@@ -115,7 +115,7 @@ public class GameOfLife extends JPanel {
 		{
 			try 
 			{
-				 Scanner scan = new Scanner(new File("resources/GameOfLife/legitness.txt"));
+				 Scanner scan = new Scanner(new File("resources/GameOfLife/glider.txt"));
 				 int iters = Integer.parseInt(scan.nextLine());
 				 for (int i = 0; i < iters; i++)
 				 {
