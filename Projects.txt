@@ -44,3 +44,4 @@ Semester 2:
 	PictureLab: IDFK what this is, it's a lab we have to do.
 	MatrixMult: Provides a class to multiply matrices (a little hard to read)
 	GameOfLife: Conway's game of life in a JFrame
+	KnightsTour: Solves the knight's tour problem
