@@ -18,7 +18,7 @@ public class GameOfLife extends JPanel {
 	Cell[][] cells;
 	Cell[][] nextGen;
 	
-	public GameOfLife(int h, int w, int cellSize)
+	public GameOfLife(int h, int w, int cellSize, boolean fromFile)
 	{
 		this.h = h;
 		this.w = w;
@@ -27,7 +27,7 @@ public class GameOfLife extends JPanel {
 		nextGen = new Cell[h][w];
 		setPreferredSize(new Dimension(h * cellSize + 1, w * cellSize + 1));
 		initCells();
-		readData(false);
+		readData(fromFile);
 	}
 	
 	private void initCells()
@@ -51,14 +51,14 @@ public class GameOfLife extends JPanel {
 				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
 			}
 		}
-		
+
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
 			{
-				nextGen[row][col].alive = false;
+				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
 			}
-		}
+		}  
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
@@ -113,7 +113,7 @@ public class GameOfLife extends JPanel {
 		{
 			try 
 			{
-				 Scanner scan = new Scanner(new File("resources/GameOfLife/legitness.txt"));
+				 Scanner scan = new Scanner(new File("resources/GameOfLife/glider.txt"));
 				 int iters = Integer.parseInt(scan.nextLine());
 				 for (int i = 0; i < iters; i++)
 				 {
