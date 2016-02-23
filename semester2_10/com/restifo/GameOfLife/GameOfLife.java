@@ -43,16 +43,14 @@ public class GameOfLife extends JPanel {
 	
 	public void doNextGen()	
 	{
-		Cell[][] nextGen = new Cell[h][w]; // bad code
+		Cell[][] nextGen = new Cell[h][w];
 		for (int row = 0; row < h; row++)
 		{
-//			for (int col = 0; col < w; col++)
-//			{
-//				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
-//			}
-			nextGen[row] = cells[row].clone();
-		}  // end bad code
-		//Cell[][] nextGen = cells;
+			for (int col = 0; col < w; col++)
+			{
+				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
+			}
+		}
 		
 		for (int row = 0; row < h; row++)
 		{
