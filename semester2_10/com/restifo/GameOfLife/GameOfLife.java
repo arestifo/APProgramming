@@ -113,7 +113,7 @@ public class GameOfLife extends JPanel {
 		{
 			try 
 			{
-				 Scanner scan = new Scanner(new File("resources/GameOfLife/glider.txt"));
+				 Scanner scan = new Scanner(new File("resources/GameOfLife/lifeData.txt"));
 				 int iters = Integer.parseInt(scan.nextLine());
 				 for (int i = 0; i < iters; i++)
 				 {
@@ -153,6 +153,19 @@ public class GameOfLife extends JPanel {
 					ret++;
 				}
 			}
+		}
+		return ret;
+	}
+	
+	public int[] getRowColTen() 
+	{
+		int[] ret = new int[2];
+		for (int i = 0, j = 0; i < h && j < w; i++, j++)
+		{
+			if (cells[i][9].alive)
+				ret[0]++;
+			if (cells[9][i].alive)
+				ret[1]++;
 		}
 		return ret;
 	}

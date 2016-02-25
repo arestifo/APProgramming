@@ -14,8 +14,9 @@ public class Runner {
 	public static void main(String[] args) throws InterruptedException 
 	{
 		JFrame frame = new JFrame("Game of life");
-		game = new GameOfLife(100, 100, 10, false);
-		registerKeys();
+		String[] params = JOptionPane.showInputDialog("Enter game parameters (height, width, size of cell)").split(",");
+		game = new GameOfLife(Integer.parseInt(params[0]), Integer.parseInt(params[1]), Integer.parseInt(params[2]), false);
+		registerListeners();
 		frame.add(game);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
@@ -25,18 +26,19 @@ public class Runner {
 		{
 			game.doNextGen();
 			game.repaint();
-			Thread.sleep(50); // 50
+			Thread.sleep(50); 
 		}
 	}
 	
-	private static void registerKeys()
+	private static void registerListeners()
 	{
 		Action stats = new AbstractAction("stats") 
 		{
 			private static final long serialVersionUID = 1L;
 			public void actionPerformed(ActionEvent e)
 			{
-				JOptionPane.showMessageDialog(null, String.format("Stats\nGeneration: %d\nCells alive: %d", gen, game.getAlive()));
+				int[] rowCol = game.getRowColTen();
+				JOptionPane.showMessageDialog(null, String.format("Stats\nGeneration: %d\nCells alive: %d\nRow 10: %d\nColumn 10: %d", gen, game.getAlive(), rowCol[0], rowCol[1]));
 			}
 		};
 		KeyStroke keyS = KeyStroke.getKeyStroke("S");
