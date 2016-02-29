@@ -38,7 +38,7 @@ public class Runner {
 			public void actionPerformed(ActionEvent e)
 			{
 				int[] rowCol = game.getRowColTen();
-				JOptionPane.showMessageDialog(null, String.format("Stats\nGeneration: %d\nCells alive: %d\nRow 10: %d\nColumn 10: %d", gen, game.getAlive(), rowCol[0], rowCol[1]));
+				JOptionPane.showMessageDialog(null, String.format("Stats\nGeneration:    %d\nCells alive:      %d\nRow 10:           %d\nColumn 10:     %d", gen, game.getAlive(), rowCol[0], rowCol[1]));
 			}
 		};
 		KeyStroke keyS = KeyStroke.getKeyStroke("S");

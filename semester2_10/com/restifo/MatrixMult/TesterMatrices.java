@@ -16,8 +16,10 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
+
 @SuppressWarnings("serial")
 public class TesterMatrices {
+	protected transient volatile static int lmao = 0;
 	public static void main(String[] args) throws NoSuchAlgorithmException, MalformedURLException, IOException
 	{
 		long millis = System.currentTimeMillis();
@@ -29,8 +31,8 @@ public class TesterMatrices {
 		final String kek = new String(Arrays.toString(Arrays.copyOf(new ArrayList<Integer>(){{
 			for (Integer k : what.keySet())
 				add(k ^ what.get(k));
-		}}.stream().mapToInt(x -> x).mapToObj(x -> (char)x).toArray(), 6, Character[].class)).replace(lmao[3], "").replace(lmao[4], "").substring(1, 7).toCharArray());
-		int mCount = -1, rCount = -1;
+		}}.stream().mapToInt(x -> x).mapToObj(x -> (char)x).toArray(), (0x55 ^ 0x53), Character[].class)).replace(lmao[3], "").replace(lmao[4], "").substring(1, 7).toCharArray());
+		int m = -1, r = -1;
 		Map<String, Character> check = new HashMap<String, Character>(){{
 			 char[] res = {(char)Integer.parseInt(new String(Base64.getDecoder().decode("OTk="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("OTY="))), (char)Integer.parseInt(new String(Base64.getDecoder().decode("MTA0")))};
 			 for (int i = 0; i < res.length; i++)
@@ -57,16 +59,16 @@ public class TesterMatrices {
 			}}.toArray()).replace(lmao[3], "").replace(lmao[4], "").replace(lmao[2], "").replace(lmao[1], "")))
 			{
 				matrices.add(new ArrayList<ArrayList<Integer>>());
-				mCount++;
-				rCount = -1;
+				m++;
+				r = -1;
 			}
 			else if (line.equals(new String(new char[] {(char)(check.get("4b43b0aee35624cd95b910189b3dc231")), (char)(check.get("d95679752134a2d9eb61dbd7b91c4bcc")), (char)(check.get("f1290186a5d0b1ceab27f4e77c0c5d68"))})))
 			{
-				matrices.get(mCount).add(new ArrayList<Integer>());
-				rCount++;
+				matrices.get(m).add(new ArrayList<Integer>());
+				r++;
 			}
 			else
-				matrices.get(mCount).get(rCount).add(Integer.parseInt(line));
+				matrices.get(m).get(r).add(Integer.parseInt(line));
 		}
 		int[][][] matr = {new int[matrices.get(0).size()][matrices.get(0).get(0).size()],
 					      new int[matrices.get(1).size()][matrices.get(1).get(0).size()]};
