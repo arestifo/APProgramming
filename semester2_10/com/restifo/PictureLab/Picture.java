@@ -152,7 +152,8 @@ public class Picture extends SimplePicture
       }
   }
   
-  public void fixUnderwater()
+  @SuppressWarnings("unused")
+public void fixUnderwater()
   {
     Pixel[][] pixels = this.getPixels2D();
     

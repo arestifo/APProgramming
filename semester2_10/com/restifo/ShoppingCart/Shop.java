@@ -1,11 +1,13 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+package com.restifo.ShoppingCart;
 import static java.lang.System.out;
+
+import java.util.Scanner;
+@SuppressWarnings("unused")
 public class Shop
 {
 	public static void main (String[] args)
 	{
-		Item item;
+		//Item item;
 		String itemName;
 		double itemPrice;
 		int quantity;
@@ -25,5 +27,6 @@ public class Shop
 			keepShopping = scan.nextLine();
 		}
 		while (keepShopping.equals("y"));
+		scan.close();
 	}
 }
