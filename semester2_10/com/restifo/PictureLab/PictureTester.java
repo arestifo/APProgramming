@@ -12,7 +12,7 @@ public class PictureTester
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("resources/PicLab/img/beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
@@ -20,7 +20,7 @@ public class PictureTester
   
   public static void testKeepOnlyBlue()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("resources/PicLab/img/beach.jpg");
     beach.explore();
     beach.keepOnlyBlue();
     beach.explore();
@@ -28,7 +28,7 @@ public class PictureTester
 
   public static void testNegate()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("resources/PicLab/img/beach.jpg");
     beach.explore();
     beach.negate();
     beach.explore();
@@ -36,7 +36,7 @@ public class PictureTester
   
   public static void testGrayscale()
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("resources/PicLab/img/beach.jpg");
     beach.explore();
     beach.grayscale();
     beach.explore();
@@ -44,7 +44,7 @@ public class PictureTester
   
   public static void testFixUnderwater()
   {
-    Picture fishes = new Picture("water.jpg");
+    Picture fishes = new Picture("resources/PicLab/img/water.jpg");
     fishes.explore();
     fishes.fixUnderwater();
     System.out.println("Fixed underwater");
@@ -54,7 +54,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("resources/PicLab/img/caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -62,7 +62,7 @@ public class PictureTester
   
   public static void testMirrorVerticalRightToLeft()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("resources/PicLab/img/caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorVerticalRightToLeft();
     caterpillar.explore();
@@ -70,7 +70,7 @@ public class PictureTester
   
   public static void testMirrorHorizontal()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("resources/PicLab/img/caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
@@ -78,7 +78,7 @@ public class PictureTester
   
   public static void testMirrorHorizontalBottomToTop()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("resources/PicLab/img/caterpillar.jpg");
     caterpillar.explore();
     caterpillar.mirrorHorizontalBottomToTop();
     caterpillar.explore();
@@ -87,7 +87,7 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture("resources/PicLab/img/temple.jpg");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
@@ -95,7 +95,7 @@ public class PictureTester
   
   public static void testMirrorArms()
   {
-    Picture snowman = new Picture("snowman.jpg");
+    Picture snowman = new Picture("resources/PicLab/img/snowman.jpg");
     snowman.explore();
     snowman.mirrorArms();
     snowman.explore();
@@ -103,7 +103,7 @@ public class PictureTester
   
   public static void testMirrorGull()
   {
-    Picture seagull = new Picture("seagull.jpg");
+    Picture seagull = new Picture("resources/PicLab/img/seagull.jpg");
     seagull.explore();
     seagull.mirrorGull();
     seagull.explore();
@@ -112,19 +112,15 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("resources/PicLab/img/640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
-  
-  public static void testmyCollage()
-  {
-    
-  }
+
   
   public static void testCopy()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("resources/PicLab/img/640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
@@ -132,7 +128,7 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("resources/PicLab/img/swan.jpg");
     swan.explore();
     swan.edgeDetection(27);
     swan.explore();
@@ -154,12 +150,12 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
-    // testMirrorHorizontal();
-    // testMirrorHorizontalBottomToTop();
+    //testMirrorHorizontal();
+    //testMirrorHorizontalBottomToTop();
     //testMirrorDiagonal();
-    //testMirrorTemple();
-    //testMirrorArms();
-    //testMirrorGull();
+    ////testMirrorTemple();
+    ////testMirrorArms();
+    ////testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
