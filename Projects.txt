@@ -45,3 +45,5 @@ Semester 2:
 	MatrixMult: Provides a class to multiply matrices (a little hard to read)
 	GameOfLife: Conway's game of life in a JFrame
 	KnightsTour: Solves the knight's tour problem
+	BigBucks: Extension to the BankAccount projeect
+	ShoppingCart: Uses an ArrayList to represent a shopping cart
