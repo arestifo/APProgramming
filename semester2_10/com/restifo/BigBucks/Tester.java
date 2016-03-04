@@ -16,10 +16,15 @@ public class Tester {
 		{
 			out.print("Please enter the name to whom the account belongs. (\"Exit\" to abort): ");
 			name = scan.nextLine();
-			if (name.toLowerCase().equals("exit")) break;
+			if (name.toLowerCase().equals("exit"))
+			{
+				out.println();
+				break;
+			}
 			out.print("Please enter the amount of the deposit: ");
 			deposit = Double.parseDouble(scan.nextLine());
 			accounts.add(new BankAccount(name, deposit));
+			out.println();
 		}
 		
 		double max = 0.0;
