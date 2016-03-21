@@ -48,3 +48,4 @@ Semester 2:
 	BigBucks: Extension to the BankAccount projeect
 	ShoppingCart: Uses an ArrayList to represent a shopping cart
 	BackToSchool: A project using a lot of inheritance
+	InheritancePractice: Inheritance practice
