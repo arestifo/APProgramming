@@ -1,6 +1,7 @@
 package com.restifo.TestQuestions;
+import static java.lang.System.out;
+
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
@@ -10,7 +11,7 @@ public class WriteTest {
 	{
 		Scanner scan = new Scanner(new File("resources/TestQuestions/testbank.txt"));
 		int numQuestions = Integer.parseInt(scan.nextLine());
-		ArrayList<TestQuestion> questions = new ArrayList<TestQuestion>();
+		TestQuestion[] questions = new TestQuestion[numQuestions];
 		HashMap<String, Callable<String[]>> functions = new HashMap<String, Callable<String[]>>()
 		{{
 			put("e", new Callable<String[]>(){
@@ -27,7 +28,7 @@ public class WriteTest {
 					int numChoices = Integer.parseInt(scan.nextLine());
 					String[] ret = new String[numChoices + 1];
 					for (int i = 0; i < ret.length; i++)
-						ret[i] = scan.nextLine();
+						ret[i] = scan.nextLine(); 
 					return ret;
 				}});
 		}};
@@ -35,12 +36,12 @@ public class WriteTest {
 		{
 			String input = scan.nextLine();
 			String[] result = functions.get(input).call();
-			questions.add(input.equals("e") ? new Essay(result) : new MultChoice(result));
+			questions[i] = input.equals("e") ? new Essay(result) : new MultChoice(result);
 		}
-		for(int i = 0; i < questions.size(); i++)
+		for(int i = 0; i < questions.length; i++)
 		{
-			System.out.print(i + 1 + ") ");
-			System.out.println(questions.get(i));
+			out.print(i + 1 + ") ");
+			out.println(questions[i]);
 		}
 		scan.close();
 	}
