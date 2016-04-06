@@ -50,3 +50,4 @@ Semester 2:
 	BackToSchool: A project using a lot of inheritance
 	InheritancePractice: Inheritance practice
 	TestQuestions: A pair programming thing
+	EmployeeInheritance: Practicing inheritance with a real-world example of a firm
