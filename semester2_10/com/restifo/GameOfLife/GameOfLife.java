@@ -50,15 +50,7 @@ public class GameOfLife extends JPanel {
 			{
 				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
 			}
-		}
-
-		for (int row = 0; row < h; row++)
-		{
-			for (int col = 0; col < w; col++)
-			{
-				nextGen[row][col] = new Cell(this, col * cellSize, row * cellSize, row, col, cellSize); // memory leak
-			}
-		}  
+		} 
 		for (int row = 0; row < h; row++)
 		{
 			for (int col = 0; col < w; col++)
@@ -98,7 +90,7 @@ public class GameOfLife extends JPanel {
 			}
 			else
 			{
-				if (cells[nX][nY].alive == true)
+				if (cells[nX][nY].alive)
 				{
 					neighbors++;
 				}
