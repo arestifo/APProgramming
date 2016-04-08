@@ -16,5 +16,5 @@ public class Farm
             System.out.println(a[i].getType() + " goes " + a[i].getSound());
         }
          System.out.println("The cow is known as " + ((NamedCow)a[0]).getName());
-    }
+    } 
 }
