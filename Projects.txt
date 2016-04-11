@@ -52,3 +52,4 @@ Semester 2:
 	TestQuestions: A pair programming thing
 	EmployeeInheritance: Practicing inheritance with a real-world example of a firm
 	OldMacDonald:More inheritance practice, this time with some polymorphism
+	SportsStats: More polymorphism practice with a sports statistics program
