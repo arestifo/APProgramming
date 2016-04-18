@@ -53,3 +53,4 @@ Semester 2:
 	EmployeeInheritance: Practicing inheritance with a real-world example of a firm
 	OldMacDonald:More inheritance practice, this time with some polymorphism
 	SportsStats: More polymorphism practice with a sports statistics program
+	Fibonacci: Recurstion practice using the fibonacci sequence
