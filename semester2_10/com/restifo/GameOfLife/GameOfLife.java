@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import javax.swing.JPanel;
@@ -15,8 +14,7 @@ public class GameOfLife extends JPanel {
 	private final int h;
 	private final int w;
 	private final int cellSize;
-	Cell[][] cells;
-	Cell[][] nextGen;
+	private Cell[][] cells;
 	
 	public GameOfLife(int h, int w, int cellSize, boolean fromFile)
 	{
@@ -24,7 +22,6 @@ public class GameOfLife extends JPanel {
 		this.w = w;
 		this.cellSize = cellSize;
 		cells = new Cell[h][w];
-		nextGen = new Cell[h][w];
 		setPreferredSize(new Dimension(h * cellSize + 1, w * cellSize + 1));
 		initCells();
 		readData(fromFile);
@@ -58,17 +55,11 @@ public class GameOfLife extends JPanel {
 				Cell cell = cells[row][col];
 				int neighbors = getNeighbors(cell);
 				if (!cell.alive && neighbors == 3)
-				{
 					nextGen[row][col].alive = true;
-				}
 				if (cell.alive && (neighbors <= 1 || neighbors >= 4))
-				{
 					nextGen[row][col].alive = false;
-				}
 				if (cell.alive && (neighbors == 2 || neighbors == 3))
-				{
 					nextGen[row][col].alive = true;
-				}
 			}	
 		}
 		cells = nextGen;
@@ -76,19 +67,14 @@ public class GameOfLife extends JPanel {
 	
 	private int getNeighbors(Cell cell)
 	{
-		// check all possible neighbors
 		int x = cell.ix;
 		int y = cell.iy;
 		int[][] possible = {{x, y + 1}, {x - 1, y + 1}, {x - 1, y}, {x - 1, y - 1}, {x, y - 1}, {x + 1, y - 1}, {x + 1, y}, {x + 1, y + 1}};
 		int neighbors = 0;
 		for (int[] pos : possible)
 		{
-			int nX = pos[0], nY = pos[1]; // neighbor x & y
-			if (nX < 0 || nX > cells.length - 1 || nY < 0 || nY > cells.length - 1)
-			{
-				continue; // not a valid neighbor, so skip it
-			}
-			else
+			int nX = pos[0], nY = pos[1];
+			if (!(nX < 0 || nX > cells.length - 1 || nY < 0 || nY > cells.length - 1))
 			{
 				if (cells[nX][nY].alive)
 				{
@@ -116,10 +102,7 @@ public class GameOfLife extends JPanel {
 				 }
 				 scan.close();
 			} 
-			catch (FileNotFoundException e) 
-			{
-				e.printStackTrace(); 
-			}
+			catch (Exception e) { }
 		}
 		else
 		{

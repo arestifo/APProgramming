@@ -23,11 +23,10 @@ public class Cell {
 	
 	public void paint(Graphics2D g)
 	{
-		//g.setColor(alive ? new Color(Color.HSBtoRGB((float)Math.random(), 1.0f, 1.0f)) : Color.white);
-		g.setColor(alive ? Color.blue : Color.white);
+		g.setColor(alive ? new Color(Color.HSBtoRGB((float)Math.random(), 1.0f, 1.0f)) : Color.white);
+		//g.setColor(alive ? Color.blue : Color.white);
 		g.fillRect(x, y, hw, hw);
 		g.setColor(Color.black);
-		//g.setColor(new Color(Color.HSBtoRGB((float)Math.random(), 1.0f, 1.0f)));
 		g.drawRect(x, y, hw, hw);
 	}
 }
