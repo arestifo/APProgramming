@@ -4,7 +4,7 @@ package com.restifo.TowersOfHanoi;
 //
 //  Demonstrates recursion.
 //********************************************************************
-public class MazeSearch
+public class MazeSearch3D
 {
    //-----------------------------------------------------------------
    //  Creates a new maze, prints its original form, tries to
@@ -14,15 +14,27 @@ public class MazeSearch
    {
 		  boolean done = false;
 		  long millis = System.currentTimeMillis();
-		  Maze labyrinth = new Maze();
-		  if (labyrinth.traverse(0, 0))
+		  int count = 0;
+		  while (!done)
 		  {
-			  System.out.println("The maze was successfully solved");
+		
+		      Maze3D labyrinth = new Maze3D();
+		   
+		      System.out.println (labyrinth);
+
+		      if (labyrinth.traverse (0, 0, 0))
+		      {
+		    	 done = true;
+		         System.out.println ("The maze was successfully solved!");
+		      }
+		      else
+		      {
+		         System.out.println ("There is no possible path.");
+		      }
+		      System.out.println (labyrinth);  
+		      count++;
 		  }
-		  else
-		  {
-			  System.out.println("No solution");
-		  }
+		  System.out.println("Took " + count + " generations");
 	      System.out.println("Took " + (System.currentTimeMillis() - millis) + "ms");
    	}
 }
