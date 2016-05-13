@@ -54,3 +54,4 @@ Semester 2:
 	OldMacDonald:More inheritance practice, this time with some polymorphism
 	SportsStats: More polymorphism practice with a sports statistics program
 	Fibonacci: Recurstion practice using the fibonacci sequence
+	TowerOfHanoi: Contains the maze project and towers of hanoi
