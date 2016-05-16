@@ -55,3 +55,4 @@ Semester 2:
 	SportsStats: More polymorphism practice with a sports statistics program
 	Fibonacci: Recurstion practice using the fibonacci sequence
 	TowerOfHanoi: Contains the maze project and towers of hanoi
+	RecursiveSorts: Demonstrates the use of recursion in sorting algorithms

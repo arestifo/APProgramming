@@ -12,7 +12,6 @@ public class MazeSearch
    //-----------------------------------------------------------------
    public static void main (String[] args)
    {
-		  boolean done = false;
 		  long millis = System.currentTimeMillis();
 		  Maze labyrinth = new Maze();
 		  if (labyrinth.traverse(0, 0))
