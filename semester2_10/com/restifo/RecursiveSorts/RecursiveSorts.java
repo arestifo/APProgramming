@@ -1,35 +1,12 @@
 package com.restifo.RecursiveSorts;
-import static java.lang.System.out;
-public class RecursiveSorts {
-	private static final int[] NUMS = {9, 3, 84, 42, 36, 99, 102, 22, 8, 6, 73, 1};
-	public static void main(String[] args) 
-	{
-		int[] numbers = NUMS;
-		out.print("Mergesort: ");
-		mergeSort(numbers);
-		printList(numbers);
-		out.println();
-		
-		out.print("Quicksort: ");
-		numbers = NUMS;
-		quickSort(numbers);
-		printList(numbers);
-	}
+public class RecursiveSorts { 
 	
-	private static void printList(int[] numbers)
-	{
-		for (int i : numbers)
-		{
-			System.out.print(i + " ");
-		}	
-	}
-	
-	public static void mergeSort(int[] numbers)
+	public static void mergeSort(double[] numbers)
 	{
 		doMergeSort(numbers, 0, numbers.length - 1);
 	}
 	
-	private static void doMergeSort(int[] numbers, int start, int end)
+	private static void doMergeSort(double[] numbers, int start, int end)
 	{
 		if (start < end)
 		{
@@ -40,9 +17,9 @@ public class RecursiveSorts {
 		}
 	}
 	
-	private static void merge(int[] numbers, int start, int middle, int end)
+	private static void merge(double[] numbers, int start, int middle, int end)
 	{
-		int[] tmp = new int[end - start + 1];
+		double[] tmp = new double[end - start + 1];
 		int index1 = start;
 		int index2 = middle + 1;
 		int indexTmp = 0;
@@ -82,12 +59,12 @@ public class RecursiveSorts {
 		}
 	}
 	
-	public static void quickSort(int[] numbers)
+	public static void quickSort(double[] numbers)
 	{
 		doQuickSort(numbers, 0, numbers.length - 1);
 	}
 	
-	private static void doQuickSort(int[] numbers, int start, int end)
+	private static void doQuickSort(double[] numbers, int start, int end)
 	{
 		if (start < end)
 		{
@@ -97,9 +74,9 @@ public class RecursiveSorts {
 		}
 	}
 	
-	private static int partition(int[] numbers, int start, int end)
+	private static int partition(double[] numbers, int start, int end)
 	{
-		int pivot = numbers[start];
+		double pivot = numbers[(start + end) / 2];
 		int i = start - 1;
 		int j = end + 1;
 		for (;;)
@@ -111,7 +88,7 @@ public class RecursiveSorts {
 			while (numbers[j] > pivot) j--;
 			if (i < j)
 			{
-				int tmp = numbers[i];
+				double tmp = numbers[i];
 				numbers[i] = numbers[j];
 				numbers[j] = tmp;
 			}
