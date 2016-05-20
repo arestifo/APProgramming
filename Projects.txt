@@ -60,3 +60,4 @@ Semester 2:
 		Activity1: Setting up structure and toString methods of the Card class
 		Activity2: Designed the deck and card classes
 		Activity3: Implementing the shuffle function
+		Activity4: Implementing the shuffle method an adding a tester to shuffle a whole deck of cards
