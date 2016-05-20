@@ -56,3 +56,7 @@ Semester 2:
 	Fibonacci: Recurstion practice using the fibonacci sequence
 	TowerOfHanoi: Contains the maze project and towers of hanoi
 	RecursiveSorts: Demonstrates the use of recursion in sorting algorithms
+	Elevens: A card game lab
+		Activity1: Setting up structure and toString methods of the Card class
+		Activity2: Designed the deck and card classes
+		Activity3: Implementing the shuffle function

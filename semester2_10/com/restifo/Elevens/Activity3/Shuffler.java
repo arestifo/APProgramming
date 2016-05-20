@@ -1,5 +1,6 @@
 package com.restifo.Elevens.Activity3;
 import java.lang.Math;
+
 import static java.lang.System.out;
 public class Shuffler {
     private static final int SHUFFLE_COUNT = 5;
@@ -45,7 +46,7 @@ public class Shuffler {
         out.println();
     }
 
-    public static void perfectShuffle(int[] values) 
+	public static void perfectShuffle(int[] values) 
     {
         int[] half1 = new int[VALUE_COUNT / 2];
         int[] half2 = new int[VALUE_COUNT - VALUE_COUNT / 2];
@@ -65,11 +66,6 @@ public class Shuffler {
             values[2 * i] = half2[i];
             values[2 * i + 1] = half1[i];
         }
-//
-//        if(VALUE_COUNT % 2 != 0) 
-//        {
-            values[VALUE_COUNT - 1] = half2[VALUE_COUNT - VALUE_COUNT / 2];
-//        }
     }
 
     public static void selectionShuffle(int[] values) 
