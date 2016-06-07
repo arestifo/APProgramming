@@ -61,3 +61,4 @@ Semester 2:
 		Activity2: Designed the deck and card classes
 		Activity3: Implementing the shuffle function
 		Activity4: Implementing the shuffle method an adding a tester to shuffle a whole deck of cards
+		Activity9: Implementation of the Elevens game using a backbone given to us
